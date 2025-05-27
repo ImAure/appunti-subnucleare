@@ -1,0 +1,12 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{Indice}{i}{section*.1}%
+\contentsline {chapter}{\chapternumberline {1}La Fisica del Neutrino}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Il neutrino}{1}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Il neutrino e i fisici}{1}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Il neutrino nel modello standard}{2}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}Decadimento beta}{3}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}Storia del neutrino}{3}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Il pomo della discordia}{3}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Misure dirette}{4}{subsection.1.2.2}%
+\contentsline {section}{\numberline {1.3}L'interazione debole}{6}{section.1.3}%

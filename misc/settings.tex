@@ -1,0 +1,80 @@
+%=================%
+%   PAGE LAYOUT   %
+%=================%
+
+\settrims{0pt}{0pt}
+\settypeblocksize{*}{1.1\lxvchars}{*}
+\setbinding{1.5cm}
+\setlrmargins{*}{*}{4}
+\setulmarginsandblock{1in}{*}{2}
+\checkandfixthelayout
+
+
+
+%=========================%
+%   HEADER & PAGESTYLES   %
+%=========================%
+\sideparmargin{outer}
+\setmarginnotes{0.1\foremargin}{0.7\foremargin}{\onelineskip}
+\aliaspagestyle{chapter}{empty}             % default \pagestyle{chapter} = \pagesstyle{plain} mette il numero al centro in basso.
+
+\setlength{\headwidth}{\textwidth}
+    \addtolength{\headwidth}{\marginparsep}
+    \addtolength{\headwidth}{\marginparwidth}
+
+\makepagestyle{own}
+    \makerunningwidth{own}{\headwidth}
+    \makeheadrule{own}{\headwidth}{\normalrulethickness}
+    \makeheadposition{own}{flushright}{flushleft}{flushright}{flushleft}
+    \makepsmarks{own}{%
+        \nouppercaseheads
+        \createmark{chapter}{both}{shownumber}{\chaptername\ }{.\ }
+        \createmark{section}{right}{shownumber}{}{.\ }
+        \createplainmark{toc}{both}{\contentsname}
+        \createplainmark{lof}{both}{\listfigurename}
+        \createplainmark{lot}{both}{\listtablename}
+        \createplainmark{bib}{both}{\bibname}
+        \createplainmark{index}{both}{\indexname}
+        \createplainmark{glossary}{both}{\glossaryname}    
+    }
+    \makeevenhead{own}{\bfseries\thepage}{}{\bfseries\leftmark}
+    \makeoddhead{own}{\bfseries\rightmark}{}{\bfseries \thepage}
+    \makeevenfoot{own}{}{}{\footnotesize \theauthor}
+    \makeoddfoot{own}{\footnotesize \theauthor}{}{}
+
+
+%==============%
+%   INITIALS   %
+%==============%
+
+\input Rothdn.fd
+\newcommand*\initfamily{\usefont{U}{Rothdn}{xl}{n}}
+\DeclareFontFamily{U}{yinit}{}
+\DeclareFontShape{U}{yinit}{m}{n}{<-> yinit}{}
+\newcommand{\initcolor}{purple}
+
+
+
+%===============%
+%   NUMBERING   %
+%===============%
+
+\numberwithin{equation}{chapter}    % Aggiunge il numero del capitolo all'equazione
+\setsecnumdepth{subsection}         % numera le subsection (1.1.1)
+
+\hypersetup{                    % ======================================
+    colorlinks=true,            % template preso da internet
+    linkcolor=black,            % molto sobrio, le cose cliccabili
+    filecolor=black,            % si evidenziano quando passi il
+    urlcolor=blue,              % mouse ma i link che vanno a capo
+    pdfpagemode=FullScreen,     % si evidenziano solo sul rigo del mouse.
+    citecolor=black,            % forse nel pdf finito non si colorano.
+}
+
+
+
+%==================%
+%   BIBLIOGRAPHY   %
+%==================%
+
+\addbibresource{misc/references.bib}
