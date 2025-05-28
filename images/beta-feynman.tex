@@ -1,0 +1,29 @@
+\begin{tikzpicture} [scale = 0.5, every node/.style = {font = \tiny}]
+    \draw[->] (-3,-3) -- (-3,3) node[left] {$t$};
+    
+    \coordinate (A1)    at (-2,-2.5);
+    \coordinate (A)     at (-1,0);
+    \coordinate (A2)    at (-2,2.5);
+    \coordinate (B1)    at (1.5,2.5);
+    \coordinate (B)     at (1,0.5);
+    \coordinate (B2)    at (2.5,1.5);
+
+    \foreach \x/\t/\i/\f in {0/0.7/d/u,0.25/0.4/d/d,0.5/0.4/u/u}{
+    \begin{scope}[decorate, decoration={markings, mark = at position 0.5 with {\arrow{>}}}]
+        \draw[postaction = {decorate}] ($(A1)-(\x,0)$) node [above = -10pt] {\i} -- ($(A)-(\x,0)$);
+        \draw[postaction = {decorate}] ($(A)-(\x,0)$)   -- ($(A2)-(\x,0)$) node [above = -2pt] {\f};
+    \end{scope}
+    }
+    \node at ($(A1)+(-0.25,-0.2)$) [below] {n};
+    \node at ($(A2)+(-0.25,0.2)$) [above] {p};
+    \draw[decorate, decoration = snake] (A) -- (B);
+    
+    \begin{scope}[decorate, decoration={markings, mark = at position 0.5 with {\arrow{>}}}]
+        \draw[postaction = {decorate}, line width = 0.4 pt] (B1)    -- (B);
+        \draw[postaction = {decorate}, line width = 0.4 pt] (B)     -- (B2);
+    \end{scope}
+    
+    \node at (0,0)  [below = -4pt] {$\hphantom{^-}\Wp^-$};
+    \node at (B1)   [above] {$\overline{\nup}_\text{e}$};
+    \node at (B2)   [above] {$\hphantom{^-}\text{e}^-$};
+\end{tikzpicture}

@@ -1,28 +1,52 @@
 
 \chapter{La Fisica del Neutrino}
-    \section{Il problema del decadimento \texorpdfstring{$\beta$}{beta}}
-        Il decadimento $\beta$ è un fenomeno nucleare che avviene quando un nucleo instabile si trasforma in uno più stabile trasformando un protone in neutrone o viceversa; questa trasformazione avviene attraverso l'emissione di una particella $\beta^\pm$, ovvero un elettrone ($\beta^-$) o un positrone ($\beta^+$).
+    \section{Il problema del decadimento \texorpdfstring{\betap}{beta}}
+        Il decadimento \betap\ è un fenomeno nucleare che avviene quando un nucleo instabile si trasforma in uno più stabile trasformando un protone in neutrone o viceversa; questa trasformazione viene tipicamente osservata attraverso l'emissione di una particella $\betap^\pm$, ovvero un elettrone ($\betap^-$) o un positrone ($\betap^+$).
 
-        Il problema così posto tuttavia dovrebbe portare all'osservazione di particelle $\beta$ monoenergetiche, in particolare con un'energia pari al difetto di massa del nucleo. Nel caso del decadimento $\beta^-$ il comportamento previsto applicando un modello a due corpi è
+        Il problema così impostato tuttavia dovrebbe portare all'osservazione di particelle \betap\ monoenergetiche, in particolare con un'energia cinetica pari al difetto di massa del nucleo. Nel caso del decadimento $\betap^-$ il comportamento previsto applicando il modello a due corpi è
         \begin{equation*}
             \ce{$\pqty{A, Z}$ -> $\pqty{A, Z+1}$ + e^-}
             \mycomma
         \end{equation*}
         dove $A$ è il numero di massa e $Z$ il numero atomico del nucleo. Il difetto di massa è dato dalla differenza tra la massa del nucleo iniziale e quella del nucleo finale più quella dell'elettrone: 
         \begin{equation*}
-            Q_\beta = m\pqty{A, Z} - m\pqty{A, Z+1} - m\pqty*{\txt{e}^-}
+            Q_\betap = m\pqty{A, Z} - m\pqty{A, Z+1} - m\pqty*{\txt{e}^-}
             \mycomma
         \end{equation*}
-        essendo $Q_\beta$ è il \Qv\ del decadimento. 
+        essendo $Q_\betap$ è il \Qv\ del decadimento. 
         
-        Il problema è che gli esperimenti mostrano uno spettro di energia continuo, con un massimo pari al \Qv\ del decadimento, e non uno spettro monoenergetico come previsto dalla fisica classica.
-        Quello che nei fatti si osserva è tuttavia uno spettro continuo, con un massimo pari al \Qv\ del decadimento, e non uno spettro monoenergetico come previsto dalla fisica classica. Questo fenomeno è stato spiegato da Wolfgang Pauli nel 1930 con l'introduzione di una particella elusiva, il neutrino, che viene emesso insieme all'elettrone durante il decadimento.
-        
-        
-        % \begin{equation*}
-        %     \ce{^3H -> ^3He + e^- + \overline{\nu}_e}
-        %     \mycomma
-        % \end{equation*}
+        Il problema è che lo spettro energetico dei \betap---osservato in un importante esperimento da Ellis e Wooster---risulta continuo, con un massimo pari al \Qv\ del decadimento, e non piccato come previsto da un decadimento monoenergetico. Per spiegare questa discrepanza, W. Pauli nel 1903 propose con una lettera l'introduzione di una nuova particella da chiamare \emph{neutrone}\footnote{Il neutrone vero e proprio sarebbe stato scoperto due anni dopo.} con massa e proprietà simili all'elettrone ma di carica neutra, che venisse emesso insieme all'elettrone per bilanciare il decadimento e preservare le leggi di conservazione.
+
+        Dopo la scoperta del neutrone in quanto nucleone, molto più massiccio di un elettrone e che non veniva osservato come emissione nei decadimenti \betap, E. Fermi propose nel 1932--1933 di cambiare il nome della particella ipotetica in \emph{neutrino}, essendo questo molto più piccolo e sfuggente di un neutrone.
+
+        \subsection{La proposta di Fermi per il decadimento \texorpdfstring{\betap}{beta}}
+            Una delle grandi intuizioni di Fermi fu qella di trattare il decadimento del protone o del neutrone in modo del tutto simile alla fisica atomica. Così come un atomo può passare da uno stato quantico a un altro emettendo o assorbendo un fotone
+            \begin{equation*}
+                \ce{A^* -> A + \gamma}
+                \mycomma
+            \end{equation*}
+            il protone e il neutrone sono trattati stati quantici distinti della stessa particella e l'uno può trasformarsi nell'altro attraverso l'emissione di un \betap\ e di un neutrino. Si parla quindi di un'interazione puntiforme tra quattro fermioni regolata dalla costante di Fermi $G_\text{F} = \SI{1.166}{\giga\eV (hc)^3}$ 
+            \begin{align*}
+                \ce{n &-> p + e^- + \overline{\nup}_{\text{e}}}\mycomma\\
+                \ce{p &-> n + e^+ + \nup_{\text{e}}}
+                \myperiod
+            \end{align*}
+            Il modello di Fermi dà anche una stima più corretta del tasso di decadimento e dello spettro di energia trasportata dagli eiettili.
+
+            Il modello di Fermi è stato successivamente aggiustato in seguito agli esperimenti svolti da C. Rubbia, scopritore dei bosoni mediatori: il protone e il neutrone non decadono direttamente emettendo la particella \betap\ e il neutrino, ma piuttosto uno dei quark che li costituisce decade emettendo una particella intermedia---un bosone mediatore dell'interazione debole, $\Wp^\pm$ o $\Zp^0$ a seconda che l'interazione sia a corrente carica o neutra---che a sua volta decade nella coppia \betap--\nup. Questo nuovo modello porta a una ridefinizione della costante di accoppiamento, che è quindi data da
+            \begin{equation*}
+                G_\text{F} = \sqrt{2} \frac{g^2}{8 M_{\Wp}^2}
+                \mycomma
+            \end{equation*}
+            essendo $g$ la nuova \emph{costante di accoppiamento debole} ed $M_{\Wp}$ la massa del bosone \Wp. 
+            \begin{figure}
+                \centering
+                \input{images/beta-fermi.tex}
+                \hspace{1cm}
+                \input{images/beta-feynman.tex}
+                \caption{A sinistra la rappresentazione del decadimento \betap\ secondo il modello a contatto di Fermi, a destra la rappresentazione di Feynman.}
+            \end{figure}
+
 
 
     \section{Il neutrino}
@@ -72,7 +96,7 @@
         \end{enumerate}
         Ora torniamo indietro.
         \subsection{Il pomo della discordia}
-            Pauli suppone che il neutrino abbia massa nulla, Fermi suppone che abbia una massa dell'ordine di grandezza del centesimo della massa dell'elettrone. Il modello standard attribuisce massa nulla. Dagli anni '40 agli anni '80 sono stati cercati diversi metodi per misurare la massa, che nel complesso si possono dividere in due grandi classi: le misure \emph{dirette} e le misure \emph{indirette}. A loro volta le misure dirette si dividono in filoni: studi cinematici in laboratorio---decadimenti, pochi ricercatori, faccio decadere cose e uso la meccanica classica e relativistica per studiare il moto del neutrino---, studio del doppio decadimento beta---senza neutrini, indicato dalla sigla $\beta\beta_0$---e infine neutrini da esplosione da supernovae.
+            Pauli suppone che il neutrino abbia massa nulla, Fermi suppone che abbia una massa dell'ordine di grandezza del centesimo della massa dell'elettrone. Il modello standard attribuisce massa nulla. Dagli anni '40 agli anni '80 sono stati cercati diversi metodi per misurare la massa, che nel complesso si possono dividere in due grandi classi: le misure \emph{dirette} e le misure \emph{indirette}. A loro volta le misure dirette si dividono in filoni: studi cinematici in laboratorio---decadimenti, pochi ricercatori, faccio decadere cose e uso la meccanica classica e relativistica per studiare il moto del neutrino---, studio del doppio decadimento beta---senza neutrini, indicato dalla sigla $\betap\betap_0$---e infine neutrini da esplosione da supernovae.
 
             Le misure indirette invece si basano prevalentemente sullo studio delle oscillazioni del neutrino nella materia e sono metodologie più moderne. Quello che si va a misurare però non è la massa, ma piuttosto la differenza al quadrato $\Delta m^2$ degli autostati di massa dell'Hamiltoniana del neutrino secondo la teoria delle oscillazioni.
 
@@ -90,9 +114,9 @@
             \end{enumerate}
             Scala di massa? I limiti superiori ci fanno capire che le masse dei diversi sapori di neutrino sono di ordini di grandezza diversi.
             \begin{enumerate}
-                \item Il doppio decadimento $\beta\beta_0$ può essere diverso in base al tipo di neutrino che può essere distinto in neutrino di Dirac o di Majorana. Goldhaber, Grozins e Sunyar osservano una reazione strana [vedi slide] dove il neutrino ha la stessa elicità di qualcosa boh?? di che sta parlando.? Ci sono neutrini destrorsi e sinistrorsi se immaginiamo l'elicità come una rotazione intorno alla direzione di propagazione. Ricordi l'esperimento di madame Wo dove c'era l'elicità dell'elettrone? Ecco, una cosa del genere.
+                \item Il doppio decadimento $\betap\betap_0$ può essere diverso in base al tipo di neutrino che può essere distinto in neutrino di Dirac o di Majorana. Goldhaber, Grozins e Sunyar osservano una reazione strana [vedi slide] dove il neutrino ha la stessa elicità di qualcosa boh?? di che sta parlando.? Ci sono neutrini destrorsi e sinistrorsi se immaginiamo l'elicità come una rotazione intorno alla direzione di propagazione. Ricordi l'esperimento di madame Wo dove c'era l'elicità dell'elettrone? Ecco, una cosa del genere.
                 
-                Pauli introduce uno spin di $1/2$ per bilanciare il momento angolare nel decadimento $\beta$. Possiamo dare l'elicità del neutrino come:
+                Pauli introduce uno spin di $1/2$ per bilanciare il momento angolare nel decadimento $\betap$. Possiamo dare l'elicità del neutrino come:
                 \begin{equation*}
                     \eta = \frac{\vb{S}\cdot\vb{p}}{\norm{\vb{S}}\norm{\vb{p}}}
                 \end{equation*}
@@ -129,5 +153,5 @@
                     \nu_\mu^+ + N \rightarrow \mu^+ + \text{had.}
                 \end{equation}
             \end{enumerate}
-            Il limite di questo programma è che fin'ora si è dimostrato impossibile invertire l'elicità del neutrino, per questo si ricercano i neutrini sterili nell'ambito della fisica astroparticellare o nei doppi decadimenti $\beta\beta_0$.
+            Il limite di questo programma è che fin'ora si è dimostrato impossibile invertire l'elicità del neutrino, per questo si ricercano i neutrini sterili nell'ambito della fisica astroparticellare o nei doppi decadimenti $\betap\betap_0$.
     \section{L'interazione debole}
