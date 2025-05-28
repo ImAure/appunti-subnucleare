@@ -16,21 +16,20 @@
 \usepackage{bbm}                    % cose utili per fare matematica e fisica
 \usepackage{physics}                % cose utili per fare matematica e fisica
 \usepackage{tensor}                 % =======================================
+\usepackage[version = 4]{mhchem}    % per le formule chimiche
 \usepackage{siunitx}
 
 \usepackage{graphicx}               % per le foto
 \usepackage{caption}                % per le caption
 \usepackage{tikz}                   % per fare i disegnini belli
 \usepackage{pgf}
-\usepackage{pgfplots}
-\usepackage{enumitem}               % 
+\usepackage{pgfplots}               % per fare i grafici
+\usepackage{enumitem}               % per le liste numerate e puntate 
 \usepackage{listings}
 \usepackage{emptypage}              % non se se serve
 \usepackage{lettrine}               % per le lettere belle a inizio capitolo
-%\usepackage{yfonts}                 % per le lettere belle a inizio capitolo
 
 \usepackage{hyperref}               % fa le cross reference cliccabili dentro al testo (ad esempio da indice a capitolo)
-                                    % ======================================
 
 \usepackage{xurl}
 \usepackage{csquotes}
@@ -38,6 +37,7 @@
 
 \author{P. Salumieri}
 \input{misc/settings.tex}
+\input{misc/utilities.tex}
 
 \begin{document}
     \input{misc/titlepage}
@@ -48,8 +48,8 @@
         \include{preface}
 
     \mainmatter
+        \input{chapters/intro.tex}
         \input{chapters/neutrino.tex}
-
         \appendix
         
     \backmatter

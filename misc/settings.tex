@@ -14,6 +14,7 @@
 %=========================%
 %   HEADER & PAGESTYLES   %
 %=========================%
+
 \sideparmargin{outer}
 \setmarginnotes{0.1\foremargin}{0.7\foremargin}{\onelineskip}
 \aliaspagestyle{chapter}{empty}             % default \pagestyle{chapter} = \pagesstyle{plain} mette il numero al centro in basso.
@@ -78,3 +79,197 @@
 %==================%
 
 \addbibresource{misc/references.bib}
+
+
+
+%=======================%
+%   TIKZ.NET SETTINGS   %
+%=======================%
+
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\tikzset{>=latex} % for LaTeX arrow head
+
+% UNSLANT GREEK LETTERS for particle symbols
+% https://tex.stackexchange.com/questions/145926/upright-greek-font-fitting-to-computer-modern
+% https://tex.stackexchange.com/questions/236915/adjust-custom-made-upright-greek-letters-when-used-in-subscripts
+\usepackage{scalerel}
+\newsavebox{\foobox}
+\newcommand{\slantbox}[2][0]{\mbox{%
+  \sbox{\foobox}{#2}%
+  \hskip\wd\foobox
+  \pdfsave
+  \pdfsetmatrix{1 0 #1 1}%
+  \llap{\usebox{\foobox}}%
+  \pdfrestore
+}}
+\newcommand\unslant[2][-.25]{%
+  %\mkern1.2mu%
+  \ThisStyle{\slantbox[#1]{$\SavedStyle#2$}}%
+  \mkern-2.2mu%
+}
+\newcommand\PGm{\unslant\mu} % muon
+\newcommand\PGt{\unslant\tau} % tau
+\newcommand\PGn[1]{\unslant\nu_{#1}\mkern-1.5mu} % neutrino
+
+\makeatletter
+\newcommand{\raisemath}[1]{\mathpalette{\raisem@th{#1}}}
+\newcommand{\raisem@th}[3]{\raisebox{#1}{$#2#3$}}
+\makeatother
+
+% COLORS
+\colorlet{mylightblue}{blue!60!cyan!80!black!15}
+\colorlet{mypurple}{blue!50!red!70}
+\colorlet{gaugecol}{red!90!black!70} % Wiki red
+\colorlet{leptoncol}{green!80!black!70} % Wiki green
+\colorlet{quarkcol}{blue!85!cyan!95!black!55} % Wiki purple
+\colorlet{quarkred}{red!98!black!55} % quark red
+\colorlet{quarkblue}{blue!85!cyan!98!black!55} % quark blue
+\colorlet{quarkgreen}{green!95!black!55} % quark green
+\colorlet{gluoncyan}{cyan!100!black!55} % gluon cyan
+\colorlet{gluongreen}{green!75!blue!95!black!70} % gluon green
+\colorlet{gluonyellow}{yellow!98!black!55} % gluon yellow
+\colorlet{gluonorange}{orange!100!black!65} % gluon orange
+\colorlet{gluonmagenta}{magenta!100!black!70} % gluon magenta
+\colorlet{scalarcol}{yellow!70!orange!98!black}
+\colorlet{tensorcol}{blue!50!red!70} % Wiki light blue
+\colorlet{groupcol}{orange!15}
+
+% STYLES
+\tikzset{
+  >=latex, % for LaTeX arrow head
+  header/.style={black,midway,font=\bfseries,align=center,scale=0.6},
+  proplabel/.style={black!70,scale=0.5}, % label of properties
+  bflabel/.style={font=\bfseries,inner sep=0.5pt,rotate=90},
+}
+
+% LAYERS
+\pgfdeclarelayer{back} % to draw on background
+\pgfsetlayers{back,main} % set order
+
+% PARTICLE macro
+\def\pw{0.94} % width/height of particle box
+\newcommand\opGen[2]{min(#1,(\setGen==0 || \setGen==#2) ? 1 : \d)} % calculate fermion opacity
+\tikzset{
+  x={(1.25,0)},y={(0,1.5)}, % scale x, y axes differently
+  global scale/.style={scale=#1,every node/.style={scale=#1}},
+  intgroup/.style={draw=#1!90!black!80,line width=0.5, % interaction groups
+                   fill=#1,fill opacity=0.5},
+  intgroup/.default=groupcol,
+  pics/particle/.style n args={3}{ % particle boxes
+    code={
+      \tikzset{/tikz/pic opacity/.get=\OP}
+      \begin{scope}[opacity=\OP]
+      
+      % COORDINATES
+      \coordinate (-sw) at (-\pw/2,-\pw/2);
+      \coordinate (-nw) at (-\pw/2, \pw/2);
+      \coordinate (-se) at ( \pw/2,-\pw/2);
+      \coordinate (-ne) at ( \pw/2, \pw/2);
+      
+      % DRAW BOX
+      \ifnum\pgfkeysvalueof{/tikz/fill box}=1 % fill particle boxes with color
+        \draw[#1,line width=1.1,rounded corners=3pt,shading angle=30,
+              top color=#1!90!black!40,bottom color=#1!75!black!40]
+          (-sw) rectangle (-ne);
+      \else % do not fill particle boxes with color
+        \fill[top color=#1,bottom color=#1!90!black,shading angle=30,
+              rounded corners=3pt,even odd rule]
+          (-0.48*\pw,-0.48*\pw) rectangle (0.48*\pw,0.48*\pw)
+          [rounded corners=3.7pt] (-sw) rectangle (-ne);
+      \fi
+      
+      % DRAW PARTICLES
+      \ifnum\pgfkeysvalueof{/tikz/quark balls}>0 % draw QUARK as colored RGB balls
+        \ifnum \pgfkeysvalueof{/tikz/quark balls}=1
+          \def\quarklist{quarkgreen/35:4pt/0.9,quarkred/-35:3.7pt/0.9,quarkblue/0:0/1}
+        \else
+          \def\quarklist{gluonmagenta/35:4pt/0.9,gluoncyan/-35:3.7pt/0.9,gluonyellow/0:0/1}
+        \fi
+        \foreach \col/\shift/\scale in \quarklist{
+          \fill[ball color=\col,scale=1,shift=(\shift),scale=\scale, % particle ball
+                postaction={fill=\col!80,opacity=0.8*\OP,
+                draw=\col!80!black!90,ultra thin}]
+            (0,0.11) circle(9.5pt) coordinate(-p);
+          }
+      \else \ifnum\pgfkeysvalueof{/tikz/gluon balls}=1 % draw GLUON as colored RGB balls
+        \foreach \col/\shift/\scale in {%
+          gluonmagenta/-50:5pt/0.8,gluonyellow/0:5pt/0.78,gluoncyan/50:5pt/0.8,%
+          gluongreen/100:6pt/0.8,quarkblue/200:5.8pt/0.8,gluonorange/150:5.8pt/0.76,%
+          quarkgreen/250:4.5pt/0.8,quarkred/0:0/1%
+        }{
+          \fill[ball color=\col,scale=1,shift=(\shift),scale=\scale, % particle ball
+                postaction={fill=\col!80,opacity=0.8*\OP,
+                draw=\col!80!black!90,ultra thin}]
+            (0,0.11) circle(9pt) coordinate(-p);
+          }
+      \else % draw one PARTICLE ball
+        \draw[draw=none,ball color=#1,scale=1, % particle ball
+              postaction={fill=#1!77,opacity=0.8*\OP,
+              draw=#1!80!black!90,ultra thin}]
+          (0,0.11) circle(\pgfkeysvalueof{/tikz/ball radius}) coordinate(-p);
+      \fi \fi % close all \ifnum
+      
+      % DRAW TEXT
+      \node[text=black,scale=1,shift=\pgfkeysvalueof{/tikz/symb shift}] % particle symbol
+        at (-p) {\textbf{\boldmath{#2}}};
+      \node[align=center,font=\bfseries, % particle name
+            scale=0.7*\pgfkeysvalueof{/tikz/scale name}]
+        at (0,-0.29) {\strut#3};
+      
+      \end{scope} % close opacity scope
+    }
+  },
+  % DEFAULT SETTINGS of parameters:
+  scale name/.initial=1, % scale for particle name
+  symb shift/.initial={(0,0)}, % shift for particle symbol
+  ball radius/.initial=10pt, % radius for particle ball
+  quark balls/.initial=0, % draw quark as 3 RGB-colored balls
+  gluon balls/.initial=0, % draw gluon as 8 RGB-colored balls
+  fill box/.initial=0, % fill particle boxes
+  pic opacity/.initial=1 % opacity of pictures
+}
+
+% HEADERS
+\def\nfermioncols{3} % number of fermion columns, default = 3
+\def\nbosoncols{2} % number of boson columns, default = 2
+\def\headers{
+  \fill[mylightblue,rounded corners=4pt] % FERMIONS
+    (1-\pw/2,4.74) rectangle (3+\pw/2,5.1)
+    node[midway,header] {%
+      three generations of matter\\[0pt]
+      (fermions)};
+  \node[above=0pt,scale=0.75] at (1,4.5) {I};
+  \node[above=0pt,scale=0.75] at (2,4.5) {II};
+  \node[above=0pt,scale=0.75] at (3,4.5) {III};
+  \ifnum\nfermioncols>3 % include antifermions
+    \fill[mylightblue,rounded corners=4pt] % ANTIFERMIONS
+      (4-\pw/2,4.74) rectangle (\nfermioncols+\pw/2,5.1)
+      node[midway,header] {%
+        three generations of antimatter\\[0pt]
+        (antifermions)};
+    \node[above=0pt,scale=0.75] at (4,4.5) {I};
+    \node[above=0pt,scale=0.75] at (5,4.5) {II};
+    \node[above=0pt,scale=0.75] at (6,4.5) {III};
+  \fi
+  \fill[mylightblue,rounded corners=4pt] % BOSONS
+    (\nfermioncols+1-\pw/2,4.74) rectangle (\nfermioncols+\nbosoncols+\pw/2,5.1)
+    node[midway,header] {%
+      interactions / forces\\[0pt]
+      (bosons)};
+}
+\def\headerMSSM{
+  \fill[mylightblue,rounded corners=4pt] % SFERMIONS / BOSONS
+    (1-\pw/2,4.74) rectangle (3+\pw/2,5.1)
+    node[midway,header] {%
+      superpartners of SM fermions\\[0pt]
+      (sfermions, bosons)};
+  \node[above=0pt,scale=0.75] at (1,4.5) {I};
+  \node[above=0pt,scale=0.75] at (2,4.5) {II};
+  \node[above=0pt,scale=0.75] at (3,4.5) {III};
+  \fill[mylightblue,rounded corners=4pt] % BOSINOS / FERMIONS
+    (\nfermioncols+1-0.52*\pw,4.74) rectangle (\nfermioncols+\nbosoncols+0.52*\pw,5.1)
+    node[midway,header,scale=0.96,xscale=0.92] {%
+      superpartners of SM bosons\\[0pt]
+      (bosinos, fermions)};
+}

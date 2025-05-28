@@ -1,0 +1,137 @@
+% SM PARTICLES plus TENSOR (like Wiki)
+{\sffamily\small
+\foreach \f in {0}{ % fill particle boxes
+\foreach \opQua/\opLep/\opNu/\opGlu/\opGam/\opWeak/\opHig/\setGen in {%
+  % highlight different groups of particles,
+  % by reducing the opacity of others
+  1/1/1/1/1/1/1/1          % highlight everything
+}{ % loop over opacities
+\begin{tikzpicture}[fill box=\f]
+  \message{^^JSM particles: fill box=\f}
+  
+  % HEADERS
+  \def\nbosoncols{3} % number of boson columns
+  \headers
+  
+  % QUARKS
+  \pic (QU) at (1,4) {
+    particle={quarkcol}{u}{up}
+  };
+  \pic (QC) at (2,4) {
+    particle={quarkcol}{c}{charm}
+  };
+  \pic (QT) at (3,4) {
+    particle={quarkcol}{t}{top}
+  };
+  \pic (QD) at (1,3) {
+    particle={quarkcol}{d}{down}
+  };
+  \pic (QS) at (2,3) {
+    particle={quarkcol}{s}{strange}
+  };
+  \pic (QB) at (3,3) {
+    particle={quarkcol}{b}{bottom}
+  };
+  \node[quarkcol,bflabel,above right=0pt and -2pt]
+    at (QD-sw) {QUARKS};
+  
+  % LEPTONS
+  \pic (EL) at (1,2) { %[pshift={(50:0.9)}]
+    particle={leptoncol}{e}{electron}
+  };
+  \pic[symb shift=(-90:0.6pt)] (MU) at (2,2) {
+    particle={leptoncol}{$\PGm$}{muon}
+  };
+  \pic (TAU) at (3,2) {
+    particle={leptoncol}{$\PGt$}{tau}
+  };
+  \pic[scale name=0.83] (NE) at (1,1) {
+    particle={leptoncol}{$\PGn{\text{e}}$}{electron\\[-3pt]neutrino}
+  };
+  \pic[symb shift=(-90:0.6pt),scale name=0.83] (NM) at (2,1) {
+    particle={leptoncol}{$\PGn{\PGm}$}{muon\\[-3pt]neutrino}
+  };
+  \pic[scale name=0.83] (NT) at (3,1) {
+    particle={leptoncol}{$\PGn{\PGt}$}{tau\\[-3pt]neutrino}
+  };
+  \node[leptoncol,bflabel,above right=0pt and -2pt]
+    at (NE-sw) {LEPTONS};
+  
+  % GAUGE BOSONS
+  \pic (GLU) at (4,4) {
+    particle={gaugecol}{g}{gluon}
+  };
+  \pic (GAM) at (4,3) {
+    particle={gaugecol}{$\gamma$}{photon}
+  };
+  \pic (W) at (4,2) {
+    particle={gaugecol}{W}{W boson} %$\mathrm{W}^\pm$
+  };
+  \pic (Z) at (4,1) {
+    particle={gaugecol}{Z}{Z boson} %$\mathrm{Z}^0$
+  };
+  %%%\pic[scale name=0.7] (L) at (5.6,1) {
+  %%%  particle={gaugecol}{LQ}{leptoquark}{% %^0$
+  %%%    ?}{?}{0 or 1} %>1\TeV
+  %%%};
+  \node[gaugecol,bflabel,below right=0pt and 2pt]
+    (GB) at (Z-se) {GAUGE BOSONS};
+  \node[gaugecol,bflabel,below right=-1pt and 2pt,scale=0.7]
+    at (GB.south west) {VECTOR BOSONS};
+  
+  % SCALAR BOSONS
+  \pic (HIG) at (5,4) {
+    particle={scalarcol}{H}{Higgs}
+  };
+  \node[scalarcol,bflabel,above left=-2pt and 2pt]
+    at (HIG-se) {SCALAR BOSONS};
+  
+  % TENSOR BOSONS
+  \pic (GRA) at (6,4) {
+    particle={tensorcol}{G}{graviton}
+  };
+  \node[tensorcol,bflabel,above left=-2pt and 2pt]
+    (TB) at (GRA-se) {TENSOR BOSONS};
+  \node[tensorcol,bflabel,above left=-1pt and 2pt,scale=0.7]
+    at (TB.north east) {HYPOTHETICAL};
+
+   % INTERACTION GROUPS
+  \ifnum\pgfkeysvalueof{/tikz/fill box}=0
+  \begin{pgfonlayer}{back} % draw on back
+    
+    % STRONG INTERACTIONS
+    \def\R{11.5pt}
+    \fill[intgroup,opacity=0.5*\opGlu] %=blue!20!white]
+      (QU-p)++(0,\R) -- ($(GLU-p)+(0,\R)$) arc(90:-90:\R)
+      to[out=-180,in=90,looseness=1.2] ($(QB-p)+(\R,0)$) arc(0:-90:\R)
+      -- ($(QD-p)+(0,-\R)$) arc(-90:-180:\R)
+      -- ($(QU-p)+(-\R,0)$) arc(180:90:\R)
+      -- cycle;
+    
+    % ELECTROMAGNETIC INTERACTIONS
+    \def\R{13.5pt}
+    \fill[intgroup,opacity=0.5*\opGam] %=green!20!white]
+      (QU-p)++(0,\R) -- ($(QT-p)+(0,\R)$) arc(90:0:\R)
+      to[out=-90,in=180,looseness=1.2] ($(GAM-p)+(0,\R)$) arc(90:-90:\R)
+      to[out=-180,in=90,looseness=1.2] ($(TAU-p)+(\R,0)$) arc(0:-90:\R)
+      -- ($(EL-p)+(0,-\R)$) arc(-90:-180:\R)
+      -- ($(QU-p)+(-\R,0)$) arc(180:90:\R)
+      -- cycle;
+    
+    % WEAK INTERACTIONS
+    \def\R{15.5pt}
+    \fill[intgroup,opacity=0.5*\opWeak] %=mypurple!20!white]
+      (QU-p)++(0,\R) -- ($(QT-p)+(0,\R)$) arc(90:0:\R)
+      -- ($(QB-p)+(\R,0)$)
+      to[out=-90,in=180,looseness=1.4] ($(W-p)+(0,\R)$) arc(90:0:\R)
+      -- ($(Z-p)+(\R,0)$) arc(0:-90:\R)
+      -- ($(NE-p)+(0,-\R)$) arc(-90:-180:\R)
+      -- ($(QU-p)+(-\R,0)$) arc(180:90:\R)
+      -- cycle;
+    
+  \end{pgfonlayer}
+  \fi
+\end{tikzpicture}
+}
+} % close foreach loop over \f
+}
