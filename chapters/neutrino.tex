@@ -1,4 +1,3 @@
-
 \chapter{La Fisica del Neutrino}
     \section{Il problema del decadimento \texorpdfstring{\betap}{beta}}
         Il decadimento \betap\ è un fenomeno nucleare che avviene quando un nucleo instabile si trasforma in uno più stabile trasformando un protone in neutrone o viceversa; questa trasformazione viene tipicamente osservata attraverso l'emissione di una particella $\betap^\pm$, ovvero un elettrone ($\betap^-$) o un positrone ($\betap^+$).
@@ -33,7 +32,7 @@
             \end{align*}
             Il modello di Fermi dà anche una stima più corretta del tasso di decadimento e dello spettro di energia trasportata dagli eiettili.
 
-            Il modello di Fermi è stato successivamente aggiustato in seguito agli esperimenti svolti da C. Rubbia, scopritore dei bosoni mediatori: il protone e il neutrone non decadono direttamente emettendo la particella \betap\ e il neutrino, ma piuttosto uno dei quark che li costituisce decade emettendo una particella intermedia---un bosone mediatore dell'interazione debole, $\Wp^\pm$ o $\Zp^0$ a seconda che l'interazione sia a corrente carica o neutra---che a sua volta decade nella coppia \betap--\nup. Questo nuovo modello porta a una ridefinizione della costante di accoppiamento, che è quindi data da
+            Il modello di Fermi è stato successivamente aggiustato in seguito agli esperimenti svolti da C. Rubbia, scopritore dei bosoni mediatori: il protone e il neutrone non decadono direttamente emettendo la particella \betap\ e il neutrino, ma piuttosto uno dei quark che li costituisce decade emettendo una particella intermedia---un bosone mediatore dell'interazione debole, $\Wp^\pm$ o $\Zp^0$ a seconda che l'interazione sia a corrente carica o neutra---che a sua volta decade nella coppia \betap--$\nup_\text{e}$ \fig{fig:beta-decay}. Questo nuovo modello porta a una ridefinizione della costante di accoppiamento, che è quindi data da
             \begin{equation*}
                 G_\text{F} = \sqrt{2} \frac{g^2}{8 M_{\Wp}^2}
                 \mycomma
@@ -45,31 +44,35 @@
                 \hspace{1cm}
                 \input{images/beta-feynman.tex}
                 \caption{A sinistra la rappresentazione del decadimento \betap\ secondo il modello a contatto di Fermi, a destra la rappresentazione di Feynman.}
+                \label{fig:beta-decay}
             \end{figure}
 
-
-
     \section{Il neutrino}
-        Il neutrino è una particella elusiva con una sezione d'urto estremamente bassa, ha caratteristiche completamente diverse da quelle delle altre particelle rivelate attraverso la fisica dei raggi cosmici. Ad oggi è una delle particelle più ricercate, anche nel suo fenomeno di oscillazione di quello che viene chiamato \emph{flavor}, o sapore.
+        Il neutrino è una particella estremamemnte elusiva con una sezione d'urto $\sigma \sim \SI{e-44}{\centi\meter\squared}$ e ha caratteristiche molto diverse da quelle delle altre particelle rivelate attraverso la fisica dei raggi cosmici. I neutrini interagiscono solo attraverso la gravità e l'interazione debole, motivo per cui è difficilissimo intercettarli e riescono ad attraversare quasi indisturbati la materia.
 
-        Il neutrino sembra trasformarsi dal punto di partenza al punto di arrivo, anche in base alla lunghezza del tragitto (1--100 metri = short baseline, 100--1000 metri = long baseline). Viene studiato sia in ambito particellare attraverso la fisica delle astroparticelle che attraverso lo studio dei decadimenti nucleare. Si fanno molto esperimenti anche di grandi dimensioni a cui prendono parte migliaia di scienzati.
+        Le fonti di neutrini sono prevalentemente di due tipi: la maggior parte di quelli ad alta energia proviene da sorgenti astrofisiche come le \textit{supernoavae}, i neutrini di media e bassa energia invece provengono da decadimenti nucleari e sono generati in maggiore quantità nei reattori nucleari.
+        \subsection{I sapori del neutrino}
+            Uno dei più importanti esperimenti di rivelazione del neutrino, svolto presso il telescopio giapponese \emph{Super-Kamiokande} costruito specificamente per i neutrini, fu effettivamente in grado di rivelare il passaggio di neutrini provenienti dal Sole, solo che i neutrini rivelati erano un terzo di quelli che erano previsti dal modello teorico.
+            Il modello standard prevede l'esistenza di tre \emph{sapori} di neutrino: \emph{elettronico}, \emph{muonico} e \emph{tauonico}.
+
+            Il neutrino sembra trasformarsi dal punto di partenza al punto di arrivo, anche in base alla lunghezza del tragitto (1--100 metri = short baseline, 100--1000 metri = long baseline). Viene studiato sia in ambito particellare attraverso la fisica delle astroparticelle che attraverso lo studio dei decadimenti nucleare. Si fanno molto esperimenti anche di grandi dimensioni a cui prendono parte migliaia di scienzati.
 
         Rispetto al 1900 sappiamo molto di più quindi sappiamo in che direzione andare con la ricerca, ad esempio nei termini(?) di mescolamento. Ci interessano molto i neutrini di origini cosmiche che hanno energia molto elevata e possono essere rivelati solo con grandi apparati sotterranei, sottoghiaccio o sott'acqua come il km3net che ha rivelato di recente il neutrino astroparticellare più energetico mai osservato con energie del PeV. Adesso studiamo anche i neutrini che vengono dai reattori nucleari.
         
-        Gli sperimentali, i nucleari e altri fisici studiano queste cose e fanno i conti alla magistrale e al dottorato (deduco che noi non li facciamo). Ci sono scuole di alta formazione che hanno come unico obiettivo quello di approfondire la fisica del neutrino.
+        % Gli sperimentali, i nucleari e altri fisici studiano queste cose e fanno i conti alla magistrale e al dottorato (deduco che noi non li facciamo). Ci sono scuole di alta formazione che hanno come unico obiettivo quello di approfondire la fisica del neutrino.
 
     \subsection{Il neutrino e i fisici}
         All'epoca di Fermi il neutrino non veniva studiato a ``compartimenti stagni''. I fisici dell'epoca erano a tutto tondo, sviluppavano la teoria e immaginavano, costruivano ed eseguivano esperimenti. Ad esempio Fermi con i raggi cosmici ad alta energia, che immaginò potessero esse generati da esplosioni di supernove.
 
         Dal 2010 invece lo studio della fisica del neutrino ha iniziato a differenziarsi, le sottoaree sono state assorbite dai gruppi di scienziati dell'ambito in cui viene osservato: a Catania sono divisi in nucleari, astroparticelle e acceleratori.
 
-        Fermi immaginò che l'interazione del neutrino fosse un'interazione a 4 fermioni. Introdusse quella che oggi chiameremmo una costante di accoppiamento $G_\text{F}$. Naturalmente si tratta di una possibile interpretazione che seppur non sia del tutto corretta comunque ha costituito un primo modello. Non potevano fare simulazioni e non avevano strumenti per conservare i dati come oggi.
+        % Fermi immaginò che l'interazione del neutrino fosse un'interazione a 4 fermioni. Introdusse quella che oggi chiameremmo una costante di accoppiamento $G_\text{F}$. Naturalmente si tratta di una possibile interpretazione che seppur non sia del tutto corretta comunque ha costituito un primo modello. Non potevano fare simulazioni e non avevano strumenti per conservare i dati come oggi.
 
-        L'interpretazione moderna di questa interazione d icontatto dei 4 fermioni è un po' meglio. 
+        % L'interpretazione moderna di questa interazione d icontatto dei 4 fermioni è un po' meglio. 
 
-        Il neutrino è presente laddove c'è interazione debole, attraverso interazioni di corrente carica e corrente neutra. Il neutrino interagisce solo attraverso interazione debole. Vedremo l'interazione debole a parte. Essendo neutro il neutrino non può interagire col campo elettromagnetico, Pauli prevede massa nulla ma Fermi---che aveva ragione---pensava avesse una massa molto piccola, neutro come un neutrone, per questo essendo un piccolo neutrone decide di battezzarlo neutrino.
+        % Il neutrino è presente laddove c'è interazione debole, attraverso interazioni di corrente carica e corrente neutra. Il neutrino interagisce solo attraverso interazione debole. Vedremo l'interazione debole a parte. Essendo neutro il neutrino non può interagire col campo elettromagnetico, Pauli prevede massa nulla ma Fermi---che aveva ragione---pensava avesse una massa molto piccola, neutro come un neutrone, per questo essendo un piccolo neutrone decide di battezzarlo neutrino.
 
-        Gli esperimenti di Carlo Rubbia (Nobel) al CERN confermò l'esistenza dei prpagatori dell'interazione debole: $W^+$, $W^-$ e $Z^0$.
+        % Gli esperimenti di Carlo Rubbia (Nobel) al CERN confermò l'esistenza dei prpagatori dell'interazione debole: $W^+$, $W^-$ e $Z^0$.
 
         Albergo cita sempre questi esperimenti e li chiede agli esami quindi li chiede anche lei per continuità!
     \subsection{Il neutrino nel modello standard}
@@ -154,4 +157,105 @@
                 \end{equation}
             \end{enumerate}
             Il limite di questo programma è che fin'ora si è dimostrato impossibile invertire l'elicità del neutrino, per questo si ricercano i neutrini sterili nell'ambito della fisica astroparticellare o nei doppi decadimenti $\betap\betap_0$.
-    \section{L'interazione debole}
+
+
+%====================%
+%                    %
+%   29 MAGGIO 2025   %
+%                    %
+%====================%
+
+\section{29 maggio 2025}
+Torniamo alla questione neutrino di Dirac e neutrino di Majorana.
+\subsection{esperimento concettuale e doppio decadimento \betap}.
+            Il decadimento \betap\ è un decadimento con emissione di un neutrino, SE ESISTONO, i doppi decadimenti \betap\ dovrebbero emettere due neutrini(?) si scrive come $\betap\betap_0$ perché nel complesso non viene emesso il neutrino
+            \begin{equation}
+                \pqty{A,Z} -> \pqty{A,Z+2} + e^- + e^-
+            \end{equation}
+            Se un nucleo decade \betap\ emette un elettrone e un neutrino. Un doppio \betap\ permesso dovrebbe essere un decadimento con 2 elettroni e 2 neutrini. Ma può esistere un doppio \betap\ dove non viene emesso nessun neutrino? o meglio dove un neutrino viene emesso e riassorbito e restano solo i due elettroni. Questo tipo di decadimento sarebbe possibile se l'antineutrino coincidesse con il neutrino stesso e avesse massa non nulla.
+
+            In che modo permette di distinguere tra Dirac e Majorana? Il doppio decaimento senza neutrino non è possibile per i neutrini di Dirac ma solo per quelli di Majorana. In ogni caso è un processo del secondo ordine, ovvero sfavorito probabilisticamente e che avviene solo quando un decadimento del primo ordine come il classico \betap\ è proibito energeticamente.
+
+            Nel caso di Majorana, siccome non si osserva il neutrino, parliamo di neutrino virtuale che viene scambiato (tipo i fotoni virtuali dell'interazione EM?). Ora noi abbiamo appurato che il neutrino ha massa non nulla.
+
+            Kamiokande e osservatorio del gran sasso (MACRO, esperimento completamente diverso! quindi conferma molto bene) avevano scoperto le oscillazioni del neutrino che sono possibili solo se la massa è non nulla.
+            
+            La reazione divisa in due step sarebbe:
+            \begin{align}
+                \pqty{A,Z} -> \pqty{A,Z+1} + e^- + \nup \\
+                \nup\pqty{h = -1} + \pqty{A,Z+1} -> e^- + \pqty{A,Z+2}
+            \end{align}
+            questo processo richiede uno spin fotomoltiplicatori
+            Sono importanti dei punti fondamentali: l'ampiezza di probabilità per produrre un neutrino denna lprima transizione è pari a $m_\nup / E_\nup$, quindi quella per il doppio decadimento è proporzionale al quadrato di $m_\nup$. Chiaramente se la massa del neutrino è nulla la probabilità di osservarlo
+            
+            che esperimenti sono stati fatti su questa cosa?
+            \begin{equation*}
+                \ce{_{32} Ge ^{76} -> _{34}Se^{76} + e^- + e^-}
+            \end{equation*}
+            c'è un esperimento che si chiama CUORE fatto da Fiorini e co. (in corso, è l'esperimento di riferimento sul $\betap\betap_0$) sottoterra underground in silenzio cosmico (quindi bloccando tutta la radiazione cosmica), le condizioni devono essere super controllate e studia dei decadimenti rarissimi. L'apparato è grande quanto un palazzo di 4 piani e prima è stata testata larealizzabilità dell'esperimento con un prototipo chiamato CUORICINO. Servono fisici delle particelle e delle astroparticelle e i fenomeni vengono studiati a temparture prossime a \SI{0}{\kelvin}. Ma a temperature basse succedono cose strane! già i sipm a -40 gradi celsius e se magari il fotosensore resiste grazie a delle celle climatiche ma la colla e tutta la parte strutturale e l'elettronica e cavi cedono a basse temperature! Se vado sotto figurati!
+
+            Comunque Fiorini nel primo esperimento (non cuore) faceva decadere germanio in selenio e non leggeva nessun segnale. L'esperimento MACRO era per trovare monopoli magnetici e il fatto di non averli trovati permette di dare un limite superiore a quanti se ne possono vedere (sicuramente meno di quelli che lo strumento può rivelare, anche se dovessero essere 0). Quindi sostanzialmente diedero un limite superiore alla vita media del germanio e alla massa del neutrino. Maier (1994) e Heidelberg--Mosca (1998) danno una nuova stima migliorata.
+
+            In seguito l'esperimento NEMO-3 nei laboratori sotterranei del Frejus (2003) dà risultati molto migliori (vedi slide per i numeri).
+
+            Anche il NEMO è estremamemtne complicato (ci sono delle belle foto!). Da questi esperimenti (che sono misure dirette) possiamo iniziare a tirare giù delle tabelle su caratteristiche e limiti superiori.
+
+        \subsection{Aspe}
+            gli esperimenti da misure indirette danno stime migliori sulla massa del neutrino, poi le facciamo!
+        \subsection{Sorgenti}
+            Sorgenti! Naturali:
+            \begin{enumerate}
+                \item neutrini terrestri da radioattività ambientali
+                \item neutrini atmosferici da raggi cosmici
+                \item neutrini solari (catene pp, CNO)
+                \item neutrini da esplosione di supernovae
+                \item neutrini dal Big Bang 
+                \item neutrini da interazioni dei raggi cosmici primari tra loro nello spazio intergalattico
+            \end{enumerate}
+            Di quelle artificiali abbiamo:
+            \begin{enumerate}
+                \item neutrini ad reattore
+                \item neutrini da acceleratore
+            \end{enumerate}
+            Non si possono ovviamente fare esperimenti in grado di rivelare tutti i tipi di neutrini a tutte le possibili energie, per questo ogni ``tipologia'' di neutrino deve essere studiata con strumenti specifici. Quello che si può fare in seguito è combinare i dati nei grafici di esclusione e estrapolare più informazioni possibili. Vediamo ora le sorgenti di origine naturale:
+            \begin{enumerate}
+                \item[\textbf{Terrestri.}] Al gran sasso rivelatore borexino bellissimo! foto belle! fa neutrini solari, fa la stessa cosa del kamiokande ma consapevolmente (sa che ne deve beccare un terzo). Questo rivelatore becca anche neutrini terrestri dal decadimento di elementi come Uranio e Torio. Sono rivelati dal superkamiokande e dal borexino. I modelli attuali sulla struttura interna della terra sono solo teorici. Juno forse aiuterà: Un altro grande osservatorio che fa questa cosa à JUNO, stessa cosa, una palla di acqua con fotomoltiplicatori. è in una caverna in cina circondato da una decina di reattori nucleari e cerca di rivelare proprio quelli, oltre che quelli atmosferici, da supernove e dal core terrestre. Ci sono stati 10 anni per pensarlo e metterlo a punto, qualche mese fa è stata riempita la sfera di scintillatore liquido e ora inizierà la presa dei dati. Perché il neutrino è un \emph{messaggero del cosmo}? è una sonda potentissima ma che significa????? beh!!!! ci porta informazioni dal core della terra e ai geofisici torna molto utile averlo come strumento. è meglio di fare carotaggi, non possiamo mica andare sottoterra.  
+                
+                \item[\textbf{Atmosferici.}] Per quel che riguarda i neutrini atmosferici, sono quelli prodotti durante le interazioni che avvengono nelle \textit{Extensive Air Shower} (\SI{e+21}{\eV}). Sono generate da raggi cosmici e altre particelle cariche ad alte energie sparate dal Sole. Se ne formamo molti di tipo muonico e tauonico e contninuano a formarsene finché lo sciame riesce a produrre nuove particelle. Alcune particelle arrivano a terra e vengono dette penetranti. Alcuni muoni viaggiano per 300 metri sottoterra ma i neutrini molto di più! questi esperimenti permettono di misurare sezioni d'urto, energiem oscillazioni etc. sta ripetendo le stesse cose sul fatto che oscillano e ne vediamo di meno. quelli atmosferici sono utili a studiare le proprietà dei neutrini per poi rivelare meglio quelli che vengono da altre sorgenti.
+                
+                \item[\textbf{Solari.}] I neutrini solari sono proposti da Bethe nel 1938 con un modello di reazioni nucleari nel sole. Il ciclo pp unisce due protonie e con un deacdimento \betap\ si produce un deuterio etc... Ci hanno permesso di studiare le reazioni nucleari che avvengon oall'interno del sole. Anche qui da catene pp e CNO (molti meno) ci aspettiamo tot neutrini dal modello stadard del sole di (bacoll??) e se ne trovavano sempre di meno (vedi kamiokande). ovviamente i fisici solari credevano al modello standard del sole mentre i particellari credevano alle loro misure. Mancavano perché i neutrini elettronici attraversando il sole estremamente denso si trasformano e diventano muonici e tauonici. Quindi giusto che ne vediamo di meno! tra l'altro nella materia si innesca un fenomeno di risonanza e i neutrini oscillano maggiormente nella materia.
+            
+                Vedere gli schemini, il Borexino ha dato misure precisissime sulla catena pp ma anche per i decadimenti di Berillio e altre reazioni e decadimenti.
+                
+                Che problemi abbiamo coi neutrini solari? Il Sole produce un flusso di \SI{6e+10}{\per\second\per\centi\meter\squared} neutrini, veramente tanti! Questo flusso è stato misurato in diversi contesti e con diversi energie, e tutti gli esperimenti misuravano più o meno la metà dei neutrini attesi. Stiamo parlando degli anni 60, ci sono voluti 40 anni per scoprire che erano le oscillazioni. Il modello solare di bacoll è confermato!
+                
+                \item[\textbf{Da Supernovae.}] Le stelle \textbf{SCHIATTANO!!! PAMMMMM} producono un sacco di neutrini con delle caratteristiche specifiche. Sono VERAMENTE VERAMENTE energetici. CI permettono di studiare le stesse supernove e ci sono molti astrofisici che studiano le supernove quindi è una sorgente più o meno conosciuti. C'è l'esperimento LWD che è stato costruito dopo la famosa supernova nel 1987-A. Purtroppo da noi ce n'è una ogni 30 anni, magari a preve ne scoppia una! Speriamo in JUNO e in LWD.
+                
+                In seguito all'esplosione del 1987 nella nube di Magellano sono stati  rivelati 11 neutrini in 10 secondi da due diversi rivelatori che cercavano neutrini solari. Questi neutrini venivano dalla povera stella scoppiata (R.I.P. sellina) ma questo confermava il modello teorico delle Supernovae.
+
+                A noi interessa in particolare capire in quale momento del collasso stellare avviene l'emissione dei neutrini da Supernovae, si nota che arriva un burst di neutrini e posso misurare con quanto ritardo arrivano rispetto alla luce. Da questo ritardo posso ricavare direttamente la massa, si è ottenuto un limite superiore di \SI{12}{\eV}. Gli altri metodi non riescono a ottenere risultati più precisi, ma non possiamo aspettare 30 anni ogni volta!
+                % +
+                % m
+
+                \item[\textbf{Cosmogenici.}] Sono i neutrini originati dall'interazione tra raggi cosmici e altra materia intergalattica---non l'interazione con l'atmosfera---e si tratta dei neutrini a più elevate energie conosciute. È possibile che provengano dai nuclei galattici attivi (AGN). Sono stati rivelati da Ice Cube e km3net, famosi!
+                
+                \item[\textbf{Cosmologici.}] Si ipotizza l'esistenza di un fondo di neutrini primordiali dal big bang, sarebbero come il fondo cosmico a microonde, che dovrebbero permeare l'universo. Li cerchiamo ma non abbiamo conferma, servono tecniche molto raffinate ed esperimenti molto diversi da quelli fatti fin'ora. è un campo aperto ma molto recente.
+                 
+                Secondo le ipotesi sarebbero stati prodotti moltissimi neutrini durante il Big Bang e dovrebbe essere rimasto la \emph{radiazione fossile di neutrini} di neutrini e antineutrini. Questi neutrini dovrebbero aver perso moltissima della loro energia nell'espansione dell'universo, giungendo a \SI{e-9}{\eV}, e sono per questo difficilissimi da notare nonostante siano distribuiti in modo isotropo con una densità $n \sim \SI{300}{\per\centi\meter\squared}$.
+            \end{enumerate}
+            È di grande utilità, soprattutto per la comprensione delle oscillazioni, lo studio dei neutrini da sorgenti artificiali:
+            \begin{enumerate}
+                \item[\textbf{Dal nucleare.}] I reattori nucleari vengono usati come sorgenti. Ci si mette a 10--20 metri fino a max 1km, per questo sono di tipo \textit{short baseline}. Serve conoscere bene cosa il reattore produce per poter prevedere il comportamento del neutrino lungo il tragitto. Si va a vedere il flusso a valle e lo si confronta col flusso a monte per avere informazioni sulle oscillazioni e sulla massa.
+                
+                Nei reattori nucleari l'uranio 235 decade alla grande e si autoalimenta producendo energia e causando altri decadimenti. I nuclei figli dell'uranio, Kripton e Bario, hanno troppi neutroni per sopravvieve e decadono \betap. Il risultato sono neutrini. Un reattore che produce 3 GW di energia produce 6 per 10 alla 20 neutrini al secondo su tutto l'angolo solido.
+
+                L'osservatorio JUNO ha anche delel appendici fatte apposta per queste misure. Ad esempio TAU che è una palla di SiPM di qualche decimetro di diametro e misura i neutrini dai reattori nucleari.
+                
+                \item[\textbf{Da acceleratori.}] Più o meno la stessa cosa si fa con gli acceleratori. Qui mettiamo rivelatori da 100km a 1000km di distanza e ricerchiamo allo stesso modo i fenomeni di oscillazioni.
+                
+                Funziona accelerando protoni---puri e guidati come necessario---che poi producono altre particelle come kaoni e pioni. Metto un materiale assorbitore denso come il piombo che arresti i muoni e restano i neutrini che attraversano distanze lunghe. Ad esempio posso produrre nuetrini al CERN e misurarli al Gran Sasso con l'esperimento Opera che ha verificato l'esistenza del neutrino tau e delle oscillazioni.
+
+                Questi esperimenti sono chiaramente long-baseline
+            \end{enumerate}
+                
+    \section{Come si misurano i neutrini}
