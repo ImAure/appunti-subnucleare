@@ -1,47 +1,46 @@
 \documentclass[twoside, a4paper, 11pt, final]{memoir}
-\usepackage[T1]{fontenc}                % per il font
-\usepackage[utf8]{inputenc}             % per l'input
-\usepackage[english, italian]{babel}    % lingua principale inglese, secondaria italiano
-%\input Rothdn.fd
-%\newcommand*\initfamily{\usefont{U}{Rothdn}{xl}{n}}
+\usepackage[T1]{fontenc}         % [essential] font encoding
+\usepackage[utf8]{inputenc}      % [essential] input encoding
+\usepackage[english, italian]{babel} % [essential] most present language goes last
+\usepackage{geometry}            % [essential] for titlepage, as memoir doesn't allow changing the layout mid-document
 
-\usepackage{layout}                 % per testare la formattazione del testo
-\usepackage{lipsum}                 % anche lui per creare testo a caso
-\usepackage{geometry}               % serve
+\usepackage{layout}              % [remove] to print the \layout, useful when adjusting memoir's layout
+\usepackage{lipsum}              % [remove] for blind text
 
-\usepackage[intlimits]{amsmath}     % =======================================
-\usepackage{amsfonts}               % cose utili per fare matematica e fisica
-\usepackage{amssymb}                % intlimits mette gli estremi di integrazione sopra e sotto il segno di integrale       
-\usepackage{amsthm}                 % cose utili per fare matematica e fisica
-\usepackage{bbm}                    % cose utili per fare matematica e fisica
-\usepackage{physics}                % cose utili per fare matematica e fisica
-\usepackage{tensor}                 % =======================================
-\usepackage[version = 4]{mhchem}    % per le formule chimiche
-\usepackage{siunitx}
+\usepackage[intlimits]{amsmath}  % [essential] maths
+\usepackage{amsfonts}            % [essential] maths
+\usepackage{amssymb}             % [essential] maths      
+\usepackage{bbm}                 % [essential] blackboard bold (for Real nummbers set, identiry matrix and such)
+\usepackage{physics}             % [essential] physics notation (matrices, derivatives, bra--kets etc)
+\usepackage{tensor}              % [essential] for tensor notation, better indeces in both displaystyle and inline math
+\usepackage{siunitx}             % [essential] for measure units
+\usepackage{amsthm}              % [useful]    for theorem environments (to be defined)
+\usepackage[version = 4]{mhchem} % [useful]    for chemistry and nuclear physics reactions
 
-\usepackage{graphicx}               % per le foto
-\usepackage{caption}                % per le caption
-\usepackage{tikz}                   % per fare i disegnini belli
-\usepackage{pgf}
-\usepackage{pgfplots}               % per fare i grafici
-\usepackage{enumitem}               % per le liste numerate e puntate 
-\usepackage{listings}
-\usepackage{emptypage}              % non se se serve
-\usepackage{lettrine}               % per le lettere belle a inizio capitolo
+\usepackage{graphicx}            % [essential] \includegraphics
+\usepackage{enumitem}            % [essential] for better enumerates 
+\usepackage{caption}             % [useful]    in case of custom floats
+\usepackage{tikz}                % [useful]    check for dependencies before removing: pgf, pgfplots, listings 
+\usepackage{pgf}                 % [useful]    for tikz plots
+\usepackage{pgfplots}            % [useful]    for tikz plots
+\usepackage{listings}            % [useful]    for code, needs tikz
 
-\usepackage{hyperref}               % fa le cross reference cliccabili dentro al testo (ad esempio da indice a capitolo)
+\usepackage{hyperref}            % [essential] hypertext references, clickable links
+\usepackage{lettrine}            % [useful]    to make cute initials
 
-\usepackage{xurl}
-\usepackage{csquotes}
-\usepackage[backend = bibtex, style = numeric-comp, maxbibnames = 5]{biblatex}
+\usepackage[backend = bibtex, style = numeric-comp]{biblatex}
+\usepackage{csquotes}            % [essential] bibliography material
+\usepackage{xurl}                   
 
-\author{P. Salumieri}
-\input{misc/settings.tex}
-\input{misc/utilities.tex}
+% -=- SETTINGS -=-
+\usepackage{misc/packages/my-science-utils}
+\usepackage{misc/packages/subnucleare-utils}
+\author{P. Salumieri}            % this will be shown in footers
+\input{misc/settings}
 
 \begin{document}
     \input{misc/titlepage}
-    \pagestyle{own}
+    \pagestyle{book-style}
 
     \frontmatter
         \tableofcontents

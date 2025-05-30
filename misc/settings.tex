@@ -1,7 +1,11 @@
-%=================%
-%   PAGE LAYOUT   %
-%=================%
+% Fields with exclamation marks in their title --- as in -> ! NAME ! --- are essential
+% without ! FIELDS ! the related packages won't work as intended
 
+%=====================%
+%   ! PAGE LAYOUT !   %
+%=====================%
+
+% >> package: memoir
 \settrims{0pt}{0pt}
 \settypeblocksize{*}{1.1\lxvchars}{*}
 \setbinding{1.5cm}
@@ -11,23 +15,24 @@
 
 
 
-%=========================%
-%   HEADER & PAGESTYLES   %
-%=========================%
+%==============================%
+%   ! HEADERS & PAGESTYLES !   %
+%==============================%
 
+% >> package: memoir
 \sideparmargin{outer}
 \setmarginnotes{0.1\foremargin}{0.7\foremargin}{\onelineskip}
-\aliaspagestyle{chapter}{empty}             % default \pagestyle{chapter} = \pagesstyle{plain} mette il numero al centro in basso.
+\aliaspagestyle{chapter}{empty}             % default \pagestyle{chapter} = \pagesstyle{plain}
 
 \setlength{\headwidth}{\textwidth}
     \addtolength{\headwidth}{\marginparsep}
     \addtolength{\headwidth}{\marginparwidth}
 
-\makepagestyle{own}
-    \makerunningwidth{own}{\headwidth}
-    \makeheadrule{own}{\headwidth}{\normalrulethickness}
-    \makeheadposition{own}{flushright}{flushleft}{flushright}{flushleft}
-    \makepsmarks{own}{%
+\makepagestyle{book-style}
+    \makerunningwidth{book-style}{\headwidth}
+    \makeheadrule{book-style}{\headwidth}{\normalrulethickness}
+    \makeheadposition{book-style}{flushright}{flushleft}{flushright}{flushleft}
+    \makepsmarks{book-style}{%
         \nouppercaseheads
         \createmark{chapter}{both}{shownumber}{\chaptername\ }{.\ }
         \createmark{section}{right}{shownumber}{}{.\ }
@@ -38,47 +43,55 @@
         \createplainmark{index}{both}{\indexname}
         \createplainmark{glossary}{both}{\glossaryname}    
     }
-    \makeevenhead{own}{\bfseries\thepage}{}{\bfseries\leftmark}
-    \makeoddhead{own}{\bfseries\rightmark}{}{\bfseries \thepage}
-    \makeevenfoot{own}{}{}{\footnotesize \theauthor}
-    \makeoddfoot{own}{\footnotesize \theauthor}{}{}
+    \makeevenhead{book-style}{\bfseries\thepage}{}{\bfseries\leftmark}
+    \makeoddhead{book-style}{\bfseries\rightmark}{}{\bfseries \thepage}
+    \makeevenfoot{book-style}{}{}{\footnotesize \theauthor}
+    \makeoddfoot{book-style}{\footnotesize \theauthor}{}{}
 
+
+
+%=============================%
+%   ! GENERAL LATEX SETUP !   %
+%=============================%
+
+% >> package: /
+\numberwithin{equation}{chapter} % show chapter number in equation number
+\setsecnumdepth{subsection}      % shows subsections' numbers
+
+% >> package: graphicx
+\graphicspath{./images/}         % sets the global graphics path to ./images/
+
+% >> package: bibtex
+\addbibresource{misc/references.bib}
+
+% >> package: hyperref
+\hypersetup{                    
+    colorlinks=true,       
+    linkcolor=black,       
+    filecolor=black,       
+    urlcolor=blue,         
+    pdfpagemode=FullScreen,
+    citecolor=black,       
+}
+
+% >> package: siunitx, physics
+\ExplSyntaxOn
+    \msg_redirect_name:nnn{siunitx}{physics-pkg}{none} % shut up the warning. \qty{} uses physics definition
+\ExplSyntaxOff
+
+% >> package: pfgplots
+\pgfplotsset{compat=1.18}
 
 %==============%
 %   INITIALS   %
 %==============%
+% package: lettrine
 
 \input Rothdn.fd
 \newcommand*\initfamily{\usefont{U}{Rothdn}{xl}{n}}
 \DeclareFontFamily{U}{yinit}{}
 \DeclareFontShape{U}{yinit}{m}{n}{<-> yinit}{}
 \newcommand{\initcolor}{purple}
-
-
-
-%===============%
-%   NUMBERING   %
-%===============%
-
-\numberwithin{equation}{chapter}    % Aggiunge il numero del capitolo all'equazione
-\setsecnumdepth{subsection}         % numera le subsection (1.1.1)
-
-\hypersetup{                    % ======================================
-    colorlinks=true,            % template preso da internet
-    linkcolor=black,            % molto sobrio, le cose cliccabili
-    filecolor=black,            % si evidenziano quando passi il
-    urlcolor=blue,              % mouse ma i link che vanno a capo
-    pdfpagemode=FullScreen,     % si evidenziano solo sul rigo del mouse.
-    citecolor=black,            % forse nel pdf finito non si colorano.
-}
-
-
-
-%==================%
-%   BIBLIOGRAPHY   %
-%==================%
-
-\addbibresource{misc/references.bib}
 
 
 
