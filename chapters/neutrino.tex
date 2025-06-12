@@ -26,13 +26,13 @@
             \end{equation*}
             il protone e il neutrone sono trattati stati quantici distinti della stessa particella e l'uno può trasformarsi nell'altro attraverso l'emissione di un \betap\ e di un neutrino. Si parla quindi di un'interazione puntiforme tra quattro fermioni regolata dalla costante di Fermi $G_\text{F} = \SI{1.166}{\giga\eV (hc)^3}$ 
             \begin{align*}
-                \ce{n &-> p + e^- + \overline{\nup}_{\text{e}}}\mycomma\\
-                \ce{p &-> n + e^+ + \nup_{\text{e}}}
+                \ce{n &-> p + e^- + \overline{\neutrino}_{\text{e}}}\mycomma\\
+                \ce{p &-> n + e^+ + \neutrino_{\text{e}}}
                 \myperiod
             \end{align*}
             Il modello di Fermi dà anche una stima più corretta del tasso di decadimento e dello spettro di energia trasportata dagli eiettili.
 
-            Il modello di Fermi è stato successivamente aggiustato in seguito agli esperimenti svolti da C. Rubbia, scopritore dei bosoni mediatori: il protone e il neutrone non decadono direttamente emettendo la particella \betap\ e il neutrino, ma piuttosto uno dei quark che li costituisce decade emettendo una particella intermedia---un bosone mediatore dell'interazione debole, $\Wp^\pm$ o $\Zp^0$ a seconda che l'interazione sia a corrente carica o neutra---che a sua volta decade nella coppia \betap--$\nup_\text{e}$ \pfigref{fig:beta-decay}. Questo nuovo modello porta a una ridefinizione della costante di accoppiamento, che è quindi data da
+            Il modello di Fermi è stato successivamente aggiustato in seguito agli esperimenti svolti da C. Rubbia, scopritore dei bosoni mediatori: il protone e il neutrone non decadono direttamente emettendo la particella \betap\ e il neutrino, ma piuttosto uno dei quark che li costituisce decade emettendo una particella intermedia---un bosone mediatore dell'interazione debole, $\Wp^\pm$ o $\Zp^0$ a seconda che l'interazione sia a corrente carica o neutra---che a sua volta decade nella coppia \betap--$\neutrino_\text{e}$ \pfigref{fig:beta-decay}. Questo nuovo modello porta a una ridefinizione della costante di accoppiamento, che è quindi data da
             \begin{equation*}
                 G_\text{F} = \sqrt{2} \frac{g^2}{8 M_{\Wp}^2}
                 \mycomma
@@ -46,6 +46,44 @@
                 \caption{A sinistra la rappresentazione del decadimento \betap\ secondo il modello a contatto di Fermi, a destra la rappresentazione di Feynman.}
                 \label{fig:beta-decay}
             \end{figure}
+    
+    \section{Sorgenti di neutrini}
+        Vediamo adesso quali sono le sorgenti principali di neutrini, distinguendole tra \emph{naturali} e \emph{artificiali}. Di solito si usa distinguere gli stessi neutrini dando loro un nome che dia informazioni sulla loro origine. In questo modo, i neutrini di origine naturale possono essere distinti in:
+        \begin{enumerate}[label = $\star$]
+            \item neutrini terrestri;
+            \item neutrini atmosferici;
+            \item neutrini solari;
+            \item neutrini da Supernovae;
+            \item neutrini cosmologici;
+            \item neutrini cosmogenici.
+        \end{enumerate}
+        Tra quelli artificiali invece distinguiamo solo due tipi:
+        \begin{enumerate}[label = $\star$]
+            \item neutrini da reattore;
+            \item neutrini da acceleratore.
+        \end{enumerate}
+        È importante ricordare che la particella in gioco è sempre la stessa, un neutrino terrestre non ha nulla di diverso da un neutrino cosmologico se non il modo in cui si è originato e il percorso che ha fatto prima di raggiungere il rivelatore.
+
+        Scendiamo adesso un po' più nel dettaglio delle sorgenti dei neutrini appena elencati.
+        \begin{enumerate}[wide = 0pt, leftmargin = \parindent]
+            \item[\textbf{Neutrini terrestri.}] Si tratta di neutrini prodotti dalla Terra---per questo chiamati anche geo-neutrini. L'esistenza di neutrini prodotti dal nucleo della Terra era stata ipotizzata fin da subito ma essi sono stati rivelati solo recentemente. Il primo esperimento ad aver effettuato una misura di questi neutrini è stato \emph{Borexino} nel 2010.\footnote{Borexino nasce come esperimento per la misura di neutrini solari originati dalla fusione del boro. I dati ricavati dall'esperimento sono stati pubblicati pochi anni fa} L'apparato, che si trova nel Gran Sasso, è una sfera gigantesca piena di scintillatore liquido (trimetilborato), la cui superficie è tappezzata da fotomoltiplicatori.
+            
+            Il nucleo della Terra si trova a temperatura e pressione elevatissime, è ferroso e caratterizzato dalla presenza di nuclei attivi come uranio, plutonio e torio, che decadono con decadimenti \betap\ producendo neutrini. I neutrini quindi attraversano quasi indisturbati lo spessore terrestre e possono essere rivelati sulla crosta. Questi neutrini portano con sé informazioni sulla struttura interna del nostro pianeta, permettendoci quindi di comprenderne e prevederne l'evoluzione negli anni.
+            
+            % FORSE VA MESSO DA UN'ALTRA PARTE??
+            %
+            % Un altro esperimento molto importante è l'esperimento JUNO, anch'esso costituito da un'enorme sfera di scintillatore liquido tappezzata di fotomoltiplicatori posizionato all'interno di una caverna in Cina e circondato da una decina di reattori nucleari. L'obbiettivo principale di JUNO è quello di misurare neutrini prodotti dai reattori circostanti ma riesce anche a misurare neutrini atmosferici, neutrini dovuti ad esplosioni di supernove e neutrini geomagnetici.
+            
+            \item[\textbf{Atmosferici.}] I neutrini atmosferici sono quelli prodotti dalle interazioni in atmosfera che si sviluppano nelle \textit{extensive air shower}. Durante questi eventi viene prodotta un'enorme quantità di particelle secondarie tra cui neutrini elettronici e muonici.
+            
+            Mentre il resto della radiazione penetrante viene assorbito al suolo, i neutrini possono viaggiare attraverso la Terra come i geo-neutrini: quando si rivelano i neutrini atmosferici lo si fa puntando i rivelatori verso il terreno e osservando le particelle che viaggiano dal basso verso l'alto. In questo modo si esclude tutta la radiazione atmosferica proveniente dal cielo e si misurano solo i neutrini provenienti dal lato opposto del pianeta.
+
+            A differenza di neutrini originati da altre sorgenti questi non ci danno grandi informazioni sull'universo, ma sono utili per studiare alcune proprietà dei neutrini stessi come la sezione d'urto, il libero cammino medio, la massa e le loro proprietà di oscillazione.
+
+            \item[\textbf{Neutrini solari}.] Come dice il nome, si tratta di neutrini prodotti dal Sole, il quale si mantiene in vita attraverso le continue reazioni nucleari delle catene \proton\proton\ e del ciclo \ce{CNO}. La rivelazione di neutrini solari ha costituito il primo mezzo per studiare le caratteristiche del Sole e delle reazioni che avvengono al suo interno.
+            
+            I neutrini solari sono stati argomento di accesa diatriba tra fisici del neutrino e fisici del Sole, dal momento che il modello standard del Sole prevedeva un flusso di neutrini molto più elevato di quello misurato dagli esperimenti a terra.
+        \end{enumerate}
 
     \section{Il neutrino}
         Il neutrino è una particella estremamemnte elusiva con una sezione d'urto $\sigma \sim \SI{e-44}{\centi\meter\squared}$ e ha caratteristiche molto diverse da quelle delle altre particelle rivelate attraverso la fisica dei raggi cosmici. I neutrini interagiscono solo attraverso la gravità e l'interazione debole, motivo per cui è difficilissimo intercettarli e riescono ad attraversare quasi indisturbati la materia.
@@ -182,11 +220,11 @@ Torniamo alla questione neutrino di Dirac e neutrino di Majorana.
             
             La reazione divisa in due step sarebbe:
             \begin{align}
-                \pqty{A,Z} -> \pqty{A,Z+1} + e^- + \nup \\
-                \nup\pqty{h = -1} + \pqty{A,Z+1} -> e^- + \pqty{A,Z+2}
+                \pqty{A,Z} -> \pqty{A,Z+1} + e^- + \neutrino \\
+                \neutrino\pqty{h = -1} + \pqty{A,Z+1} -> e^- + \pqty{A,Z+2}
             \end{align}
             questo processo richiede uno spin fotomoltiplicatori
-            Sono importanti dei punti fondamentali: l'ampiezza di probabilità per produrre un neutrino denna lprima transizione è pari a $m_\nup / E_\nup$, quindi quella per il doppio decadimento è proporzionale al quadrato di $m_\nup$. Chiaramente se la massa del neutrino è nulla la probabilità di osservarlo
+            Sono importanti dei punti fondamentali: l'ampiezza di probabilità per produrre un neutrino denna lprima transizione è pari a $m_\neutrino / E_\neutrino$, quindi quella per il doppio decadimento è proporzionale al quadrato di $m_\neutrino$. Chiaramente se la massa del neutrino è nulla la probabilità di osservarlo
             
             che esperimenti sono stati fatti su questa cosa?
             \begin{equation*}
