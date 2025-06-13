@@ -26,8 +26,8 @@
             \end{equation*}
             il protone e il neutrone sono trattati stati quantici distinti della stessa particella e l'uno può trasformarsi nell'altro attraverso l'emissione di un \betap\ e di un neutrino. Si parla quindi di un'interazione puntiforme tra quattro fermioni regolata dalla costante di Fermi $G_\text{F} = \SI{1.166}{\giga\eV (hc)^3}$ 
             \begin{align*}
-                \ce{\neutron &-> {\proton} + {\electronm} + \antineutrinoe}\mycomma\\
-                \ce{\proton &-> {\neutron} + {\positron} + \neutrinoe}
+                \ce{\neutron &-> {\proton} + {\electronm} + {\antineutrinoe}}\mycomma\\
+                \ce{\proton &-> {\neutron} + {\positron} + {\neutrinoe}}
                 \myperiod
             \end{align*}
             Il modello di Fermi dà anche una stima più corretta del tasso di decadimento e dello spettro di energia trasportata dagli eiettili.
@@ -114,34 +114,99 @@
             L'esperimento OPERA al Gran Sasso è stato il primo a misurare neutrini tauonici prodotti dall'oscillazione di neutrini muonici a loro volta prodotti al CERN. Questo tipo di esperimenti viene svolto su distanze molto lunghe, dell'ordine di \SI{e+2}{\kilo\meter}--\SI{e+3}{\kilo\meter}, e per questo vengono detti esperimenti \emph{long baseline}. 
         \end{enumerate}
 
+    \section{Caratteristiche del neutrino}
+        Il neutrino è una particella estremamemnte elusiva con una sezione d'urto $\sigma \sim \SI{e-44}{\centi\meter\squared}$ e ha caratteristiche molto diverse da quelle delle altre particelle rivelate attraverso la fisica dei raggi cosmici. I neutrini interagiscono solo attraverso la gravità e l'interazione debole, motivo per cui è difficilissimo intercettarli e riescono ad attraversare indisturbati enormi spessori di materia.
+
+        Secondo il Modello Standard, il neutrino è una particella elementare, ovvero privo di struttura interna ed appartiene alla famiglia dei leptoni. Esso ha carica nulla e spin $1/2$, classificandosi quindi come fermione, e interagisce debolmente per mezzo dei bosoni \Wpm e \Z.
+        
+        Esistono tre sapori di neutrino corrispondenti alle tre generazioni della materia, ciascun sapore prende il nome dal leptone che lo accompagna: \emph{neutrino elettronico} \neutrinoe, \emph{neutrino muonico} \neutrinomu\ e \emph{neutrino tauonico} \neutrinotau. Come per tutte le altre particelle, esistono anche le antiparticelle corrispondenti, ovvero gli \emph{antineutrini} \antineutrinoe, \antineutrinomu\ e \antineutrinotau.
+
+        Quando avviene un decadimento che rilascia un leptone, il neutrino associato viene emesso insieme al leptone stesso ed è dello stesso sapore del leptone emesso. Ad esempio nel decadimento \betap\ del neutrone, vengono emessi un elettrone e un (anti)neutrino elettronico, mentre nel decadimento del muone compare un neutrino muonico, oltre a un elettrone e un (anti)neutrino elettronico.
+
+        Il neutrino può inoltre cambiare sapore durante il suo tragitto, fenomeno noto come \emph{oscillazione}. Questo fenomeno è dovuto alla sovrapposizione quantistica degli autostati di massa del neutrino, che in sostanza sono i suoi tre possibili sapori. La probabilità di oscillazione dipende dalla differenza di massa tra i vari autostati, dalla lunghezza del tragitto percorso e dall'energia del neutrino stesso.
+
+        \subsection{La massa del neutrino}
+            Il Modello Standard prevede che il neutrino abbia massa nulla. In effetti questa supposizione appare come una assegnazione artificiosa, fatta, in un certo senso, per ``far funzionare i conti''. Tuttavia, è stata proprio la scoperta delle oscillazioni dei neutrini a smentire questa ipotesi, dal momento che le oscillazioni sono possibili solo se i neutrini hanno massa non nulla---abbiamo appena detto che la probabilità di oscillazione dipende proprio dalla \emph{differenza di massa} tra i vari autostati di massa possibili.
+
+            Tramite vari esperimenti, descritti più avanti, è stato possibile misurare la massa dei neutrini, che risulta essere molto piccola ma non nulla. È importante sottolineare che per i neutrini, più che la massa assoluta, disponiamo di una misura del limite superiore: sappiamo quindi che la massa di ciascun sapore di neutrino è inferiore a un certo valore ma non conosciamo il valore esatto, per quanto sia certamente diverso da zero. I valori attualmente accettati sono:
+            \begin{equation*}
+                m\pqty{\neutrinoe} < \SI{2.2}{\eV\per\clight\squared}
+                \mycomma\quad
+                m\pqty{\neutrinomu} < \SI{0.17}{\mega\eV\per\clight\squared}
+                \mycomma\quad
+                m\pqty{\neutrinotau} < \SI{18.2}{\mega\eV\per\clight\squared}
+            \end{equation*}
+
+    \section{Richiami sulle simmetrie}
+        Prima di dare altri dettagli sulla fisica del neutrino e discutere dei modelli di Dirac e di Majorana, riprendiamo alcune nozioni sulle proprietà di simmetria della fisica delle particelle. Le tre principali simmetrie note sono:
+        \begin{enumerate}[label = $\star$]
+            \item[(C)] Simmetria per \emph{coniugaizone di carica};
+            \item[(P)] Simmetria per \emph{inversione spaziale};
+            \item[(T)] Simmetria per \emph{inversione temporale}.
+        \end{enumerate}
+
+        Facciamo un piccolo viaggio nel mondo della meccanica quantistica per capire meglio di cosa stiamo parlando. In meccanica quantistica le simmetrie sono descritte da operatori unitari che agiscono sugli stati fisici che indichiamo con $\ket{\psi}$. Questi operatori sono definiti come:
+        \begin{align*}
+            \hat{C} \ket{\psi} &= \ket*{\bar{\psi}}\mycomma\\
+            \hat{P} \ket{\psi} &= \ket{\psi_P}\mycomma\\
+            \hat{T} \ket{\psi} &= \ket{\psi_T}\myperiod
+        \end{align*}
+        La coniugazione di carica $\hat{C}$ trasforma una particella $\ket{\psi}$ nella sua antiparticella $\ket*{\bar{\psi}}$, l'inversione spaziale $\hat{P}$ inverte le coordinate spaziali della particella---corrisponde alla riflessione rispetto all'origine---e l'inversione temporale $\hat{T}$ inverte il verso del tempo, facendo avvenire gli eventi a ritroso.
+
+        Si dice che un certo stato fisico è \emph{invariante} o \emph{simmetrico} rispetto a una delle operazioni di simmetria se l'applicazione dell'operatore allo stato lascia lo stato invariato, ovvero se valgono rispettivamente le seguenti:
+        \begin{align*}
+            \hat{C} \ket{\psi} &= \ket{\psi}\mycomma \\
+            \hat{P} \ket{\psi} &= \ket{\psi}\mycomma \\
+            \hat{T} \ket{\psi} &= \ket{\psi}\myperiod
+        \end{align*}
 
 
-    \section{Il neutrino}
-        Il neutrino è una particella estremamemnte elusiva con una sezione d'urto $\sigma \sim \SI{e-44}{\centi\meter\squared}$ e ha caratteristiche molto diverse da quelle delle altre particelle rivelate attraverso la fisica dei raggi cosmici. I neutrini interagiscono solo attraverso la gravità e l'interazione debole, motivo per cui è difficilissimo intercettarli e riescono ad attraversare quasi indisturbati la materia.
+        \subsection{Il neutrino di Dirac e di Majorana}
+            Una questione ancora aperta nella fisica del neutrino è legata alla sua elicità. Ricordiamo che l'elicità è definita come il prodotto scalare tra lo spin $\vb{S}$ e l'impulso $\vb{p}$, normalizzato per i moduli dei due vettori:
+            \begin{equation}
+                \eta = \frac{\myip{\vb{S}}{\vb{p}}}{\norm{\vb{S}}\norm{\vb{p}}}
+                \myperiod
+            \end{equation}
+            L'elicità può quindi essere positiva o negativa, a seconda che lo spin sia parallelo o antiparallelo all'impulso.
 
-        Le fonti di neutrini sono prevalentemente di due tipi: la maggior parte di quelli ad alta energia proviene da sorgenti astrofisiche come le \textit{Supernovae}, i neutrini di media e bassa energia invece provengono da decadimenti nucleari e sono generati in maggiore quantità nei reattori nucleari.
-        \subsection{I sapori del neutrino}
-            Uno dei più importanti esperimenti di rivelazione del neutrino, svolto presso il telescopio giapponese \emph{Super-Kamiokande} costruito specificamente per i neutrini, fu effettivamente in grado di rivelare il passaggio di neutrini provenienti dal Sole, solo che i neutrini rivelati erano un terzo di quelli che erano previsti dal modello teorico.
-            Il modello standard prevede l'esistenza di tre \emph{sapori} di neutrino: \emph{elettronico}, \emph{muonico} e \emph{tauonico}.
+            L'anno successivo all'osservazione della rottura di simmetria di parità nell'esperinento di Madame Wu (1956), i fisici Goldhaber, Grodzins e Sunyar proposero il primo esperimento di misura dell'elicità del neutrino attraverso la misura della polarizzazione di raggi \photon\ emessi in seguito a un decadimento E.C. dell'europio:
+            \begin{equation*}
+                \ce{{^{152}Eu} + {\electronm} -> {^{152}Sm^*} + {\neutrinoe}}
+                \myperiod
+            \end{equation*}
+            Il samario \ce{^{152}Sm^*} prodotto in questo decadimento è un nucleo eccitato che emette raggi \photon\ polarizzati,
+            \begin{equation*}
+                \ce{{^{152}Sm^*} -> {^{152}Sm} + \photon}
+                \mycomma
+            \end{equation*}
+            la cui polarizzazione è legata all'elicità del neutrino emesso, per conservazione del momento angolare. Questo esperimento ha dato come risultato sempre un'elicità negativa.
 
-            Il neutrino sembra trasformarsi dal punto di partenza al punto di arrivo, anche in base alla lunghezza del tragitto (1--100 metri = short baseline, 100--1000 metri = long baseline). Viene studiato sia in ambito particellare attraverso la fisica delle astroparticelle che attraverso lo studio dei decadimenti nucleare. Si fanno molto esperimenti anche di grandi dimensioni a cui prendono parte migliaia di scienzati.
+            Dirac e Majorana propongono due modelli diversi per il neutrino. secondo Dirac, il neutrino è una particella distinta dalla propria antiparticella, ovvero il neutrino e l'antineutrino non coincidono. In particolare il neutrino ha sempre elicità $\eta = -1$, si dice quindi \emph{sinistrorso}, e l'antineutrino ha sempre elicità $\eta = +1$, ed è detto \emph{destrorso}. La teoria di Dirac prevede inoltre che il numero leptonico debba sempre conservarsi. Sono quindi possibili i decadimenti del tipo:
+            \begin{align*}
+                \ce{\pionp &-> {\muonp} + {\neutrinomu}}\mycomma\\
+                \ce{\pionm &-> {\muonm} + {\antineutrinomu}}\myperiod
+            \end{align*}
+            Le configurazioni incrociate, ovvero quelle in cui il neutrino ha $\eta = +1$ e l'antineutrino ha $\eta = -1$, sono dette \emph{sterili}. In questo caso il neutrino non può interagire con la materia ed essere rivelato, quindi è come se non esistesse.\footnote{\authnote\ Sarò sincero, non ho capito niente di questa parte.}
 
+            La proposta di Majorana afferma invece che il neutrino coincide con la propria antiparticella e possa quindi avere elicità $\eta = \pm1$. Secondo questa teoria il numero leptonico non si conserva e 
+                    %==================%
+                    %   DA SISTEMARE   %
+                    %==================%
+    
+    
+    \newpage
+    \noindent\begin{minipage}{\textwidth}    
+        \begin{center}
+            \huge\bfseries{-- ANCORA DA SISTEMARE --}
+        \end{center}
+        \hrule
+    \end{minipage}
         Rispetto al 1900 sappiamo molto di più quindi sappiamo in che direzione andare con la ricerca, ad esempio nei termini(?) di mescolamento. Ci interessano molto i neutrini di origini cosmiche che hanno energia molto elevata e possono essere rivelati solo con grandi apparati sotterranei, sottoghiaccio o sott'acqua come il km3net che ha rivelato di recente il neutrino astroparticellare più energetico mai osservato con energie del PeV. Adesso studiamo anche i neutrini che vengono dai reattori nucleari.
         
-        % Gli sperimentali, i nucleari e altri fisici studiano queste cose e fanno i conti alla magistrale e al dottorato (deduco che noi non li facciamo). Ci sono scuole di alta formazione che hanno come unico obiettivo quello di approfondire la fisica del neutrino.
-
     \subsection{Il neutrino e i fisici}
         All'epoca di Fermi il neutrino non veniva studiato a ``compartimenti stagni''. I fisici dell'epoca erano a tutto tondo, sviluppavano la teoria e immaginavano, costruivano ed eseguivano esperimenti. Ad esempio Fermi con i raggi cosmici ad alta energia, che immaginò potessero esse generati da esplosioni di supernove.
 
         Dal 2010 invece lo studio della fisica del neutrino ha iniziato a differenziarsi, le sottoaree sono state assorbite dai gruppi di scienziati dell'ambito in cui viene osservato: a Catania sono divisi in nucleari, astroparticelle e acceleratori.
-
-        % Fermi immaginò che l'interazione del neutrino fosse un'interazione a 4 fermioni. Introdusse quella che oggi chiameremmo una costante di accoppiamento $G_\text{F}$. Naturalmente si tratta di una possibile interpretazione che seppur non sia del tutto corretta comunque ha costituito un primo modello. Non potevano fare simulazioni e non avevano strumenti per conservare i dati come oggi.
-
-        % L'interpretazione moderna di questa interazione d icontatto dei 4 fermioni è un po' meglio. 
-
-        % Il neutrino è presente laddove c'è interazione debole, attraverso interazioni di corrente carica e corrente neutra. Il neutrino interagisce solo attraverso interazione debole. Vedremo l'interazione debole a parte. Essendo neutro il neutrino non può interagire col campo elettromagnetico, Pauli prevede massa nulla ma Fermi---che aveva ragione---pensava avesse una massa molto piccola, neutro come un neutrone, per questo essendo un piccolo neutrone decide di battezzarlo neutrino.
-
-        % Gli esperimenti di Carlo Rubbia (Nobel) al CERN confermò l'esistenza dei prpagatori dell'interazione debole: $W^+$, $W^-$ e $Z^0$.
 
         Albergo cita sempre questi esperimenti e li chiede agli esami quindi li chiede anche lei per continuità!
     \subsection{Il neutrino nel modello standard}
@@ -149,15 +214,10 @@
 
         Le interazioni vengono rappresentate attraverso altre particelle mediatrici come i fotoni per l'interazione elettromagnetica, i bosoni $W^\pm$, $Z^0$ per l'interazione debole, i gluoni per l'interazione forte e il bosone di Higgs che giustifica l'esistenza della massa.
 
-        Ai neutrini viene attribuita massa nulla in maniera artificiosa, per far ``tornare i conti'' del modello standard, ma attraverso il metodo scientifico l'ipotesi è stata smentita attraverso la scoperta e lo studio delle oscillazioni. Lo studio delle oscillazioni è qualcosa che non viene previsto dal modello standarad quindi è \emph{beyond the standard model}. Matematicamente parlando, le oscillazioni sono interpretate come sovrapposizioni di autostati di massa distinti, e l'esistenza di massa prevede che il neutrino abbia massa, in contraddizione col modello standard. Al momento non abbiamo un numero per la massa ma solo dei limiti superiori, sappiamo che la massa del neutrino è non nulla e minore di una certa quantità. La massa del neutrino cambia come quella dei quark e degli altri leptoni cambiando famiglia, in ordine elettronico < muonico < tauonico.
+        Ai neutrini viene attribuita massa nulla in maniera artificiosa, per far ``tornare i conti'' del modello standard, ma attraverso il metodo scientifico l'ipotesi è stata smentita attraverso la scoperta e lo studio delle oscillazioni. Lo studio delle oscillazioni è qualcosa che non viene previsto dal modello standarad quindi è \emph{beyond the standard model}. Matematicamente parlando, le oscillazioni sono interpretate come sovrapposizioni di autostati di massa distinti, e l'esistenza di massa prevede che il neutrino abbia massa, in contraddizione col Modello Standard. Al momento non abbiamo un numero per la massa ma solo dei limiti superiori, sappiamo che la massa del neutrino è non nulla e minore di una certa quantità. La massa del neutrino cambia come quella dei quark e degli altri leptoni cambiando famiglia, in ordine elettronico < muonico < tauonico.
 
-        La sua sezione d'urto è di \SI{10e-44}{\centi\meter\squared} e di conseguenza servono target estremamente massivi per poter avere un'interazione. Al gran sasso si usano rivelatori grandi come palazzi per poter osservare l'oscillazione del neutrino. km3net usa masse d'acqua enormi. L'esperimento Auger, di cui la prof Caruso fa parte, usa rivelatori vicino alle Ande e fa rivelazioni di fotoni e neutrini astroparticellari. Non essendoci grandi masse da sfruttare hanno rivelatori che tappezzano il terreno. In realtà misurano i neutrini che vengono dal lato opposto della terra che trapassano tutto il pianeta e interagiscono col terreno. Quindi anche se ancora non capiamo il neutrino, sappiamo che ci sono molti modi di rivelarli grazie agli avanzamenti della fisica delle particelle.
-    \subsection{Decadimento beta}
-        Nei fenomeni nucleari, il decadimento beta produce neutrini:
-        \begin{equation*}
-            n \rightarrow p + e^- + \overline{\nu}_e
-        \end{equation*}
-        Il neutrone è formato da tre quark u d d che si trasformano in un u u d attraverso l'emissione di un bosone W-. Il bosone, appena lasciato il nucleone, decade in un elettrone e in un antineutrino. Avendo generato un elettrone, l'antineutrino deve essere di tipo elettronico. Se venisse emesso un muone allora il neutrino si presenterebbe anch'esso di tipo muonico.
+        % La sua sezione d'urto è di \SI{10e-44}{\centi\meter\squared} e di conseguenza servono target estremamente massivi per poter avere un'interazione. Al gran sasso si usano rivelatori grandi come palazzi per poter osservare l'oscillazione del neutrino. km3net usa masse d'acqua enormi. L'esperimento Auger, di cui la prof Caruso fa parte, usa rivelatori vicino alle Ande e fa rivelazioni di fotoni e neutrini astroparticellari. Non essendoci grandi masse da sfruttare hanno rivelatori che tappezzano il terreno. In realtà misurano i neutrini che vengono dal lato opposto della terra che trapassano tutto il pianeta e interagiscono col terreno. Quindi anche se ancora non capiamo il neutrino, sappiamo che ci sono molti modi di rivelarli grazie agli avanzamenti della fisica delle particelle.
+ 
 \section{Storia del neutrino}
         Carrellata di storia:
         \begin{enumerate}

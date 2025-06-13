@@ -7,14 +7,14 @@
     \coordinate (B)     at (1,0);
     \coordinate (B2)    at (2,-1.5);
 
-    \foreach \x/\t/\i/\f in {0/0.7/d/u,0.25/0.4/d/d,0.5/0.4/u/u}{
+    \foreach \x/\t/\i/\f in {0/0.7/\quarkd/\quarku,0.25/0.4/\quarkd/\quarkd,0.5/0.4/\quarku/\quarku}{
     \begin{scope}[decorate, decoration={markings, mark = at position 0.5 with {\arrow{>}}}]
         \draw[postaction = {decorate}] ($(A1)-(\x,0)$) node [above = -10pt] {\i} -- ($(A)-(\x,0)$);
         \draw[postaction = {decorate}] ($(A)-(\x,0)$)   -- ($(A2)-(\x,0)$) node [above = -2pt] {\f};
     \end{scope}
     }
-    \node at ($(A1)+(-0.25,-0.2)$) [below] {n};
-    \node at ($(A2)+(-0.25,0.2)$) [above] {p};
+    \node at ($(A1)+(-0.25,-0.2)$) [below] {\neutron};
+    \node at ($(A2)+(-0.25,0.2)$) [above] {\proton};
     \draw[decorate, decoration = snake] (A) -- (B);
     
     \begin{scope}[decorate, decoration={markings, mark = at position 0.5 with {\arrow{>}}}]
@@ -22,7 +22,7 @@
         \draw[postaction = {decorate}, line width = 0.4 pt] (B)     -- (B2);
     \end{scope}
     
-    \node at (0,0)  [below] {$\hphantom{^-}\Wp^-$};
+    \node at (0,0)  [below] {$\hphantom{^-}\Wm$};
     \node at (B1)   [above] {$\antineutrinoe$};
-    \node at (B2)   [below] {$\hphantom{^-}\electron^-$};
+    \node at (B2)   [below] {$\hphantom{^-}\electronm$};
 \end{tikzpicture}

@@ -17,20 +17,25 @@
 %   PARTICLES MACROS   %
 %======================%
 
-% quarks
-\newcommand{\quarku}{{\ensuremath{u}}}
-\newcommand{\quarkd}{{\ensuremath{d}}}
-\newcommand{\quarkc}{{\ensuremath{c}}}
-\newcommand{\quarks}{{\ensuremath{s}}}
-\newcommand{\quarkt}{{\ensuremath{t}}}
-\newcommand{\quarkb}{{\ensuremath{b}}}
+%% >> choose one:
+% \newcommand{\anti}{\overline}
+\newcommand{\anti}{\bar}
 
-\newcommand{\antiquarku}{{\ensuremath{\overline{u}}}}
-\newcommand{\antiquarkd}{{\ensuremath{\overline{d}}}}
-\newcommand{\antiquarkc}{{\ensuremath{\overline{c}}}}
-\newcommand{\antiquarks}{{\ensuremath{\overline{s}}}}
-\newcommand{\antiquarkt}{{\ensuremath{\overline{t}}}}
-\newcommand{\antiquarkb}{{\ensuremath{\overline{b}}}}
+% quarks
+\newcommand{\quark}{{\ensuremath{\text{q}}}}
+\newcommand{\quarku}{{\ensuremath{\text{u}}}}
+\newcommand{\quarkd}{{\ensuremath{\text{d}}}}
+\newcommand{\quarkc}{{\ensuremath{\text{c}}}}
+\newcommand{\quarks}{{\ensuremath{\text{s}}}}
+\newcommand{\quarkt}{{\ensuremath{\text{t}}}}
+\newcommand{\quarkb}{{\ensuremath{\text{b}}}}
+    \newcommand{\antiquark}{{\ensuremath{\anti{\quark}}}}
+    \newcommand{\antiquarku}{{\ensuremath{\anti{\quarku}}}}
+    \newcommand{\antiquarkd}{{\ensuremath{\anti{\quarkd}}}}
+    \newcommand{\antiquarkc}{{\ensuremath{\anti{\quarkc}}}}
+    \newcommand{\antiquarks}{{\ensuremath{\anti{\quarks}}}}
+    \newcommand{\antiquarkt}{{\ensuremath{\anti{\quarkt}}}}
+    \newcommand{\antiquarkb}{{\ensuremath{\anti{\quarkb}}}}
 
 % leptons
 \newcommand{\betap}{{\ensuremath{\unslant\beta}}}
@@ -59,7 +64,7 @@
     \newcommand{\neutrinomu}{{\ensuremath{\neutrino_\muon}}}
     \newcommand{\neutrinotau}{{\ensuremath{\neutrino_\tauon}}}
 
-\newcommand{\antineutrino}{{\ensuremath{\overline{\neutrino}}}}
+\newcommand{\antineutrino}{{\ensuremath{\anti{\neutrino}}}}
     \newcommand{\antineutrinoe}{{\ensuremath{\antineutrino_\electron}}}
     \newcommand{\antineutrinomu}{{\ensuremath{\antineutrino_\muon}}}
     \newcommand{\antineutrinotau}{{\ensuremath{\antineutrino_\tauon}}}
@@ -75,6 +80,7 @@
 
 % bosons
 \newcommand{\photon}{{\ensuremath{\gamma}}}
+\newcommand{\gluon}{{\ensuremath{\text{g}}}}
 \newcommand{\W}{{\ensuremath{\text{W}}}}
 \newcommand{\Wp}{{\ensuremath{\text{W}^+}}}
 \newcommand{\Wm}{{\ensuremath{\text{W}^-}}}
